@@ -1,0 +1,2 @@
+# mailboxJS
+Simple email service
