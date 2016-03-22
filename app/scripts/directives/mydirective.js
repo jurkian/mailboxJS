@@ -1,12 +1,6 @@
 'use strict';
 
-/**
- * @ngdoc directive
- * @name angularApp.directive:myDirective
- * @description
- * # myDirective
- */
-angular.module('angularApp')
+angular.module('mailboxApp')
   .directive('myDirective', function () {
     return {
       template: '<div></div>',

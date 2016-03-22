@@ -1,13 +1,6 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name angularApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the angularApp
- */
-angular.module('angularApp')
+angular.module('mailboxApp')
   .controller('MainCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
