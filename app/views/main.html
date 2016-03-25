@@ -1,3 +1,4 @@
+<div ng-controller="MainCtrl as main">
 <section id="intro">
   <div class="container">
     <div class="row">
@@ -18,7 +19,7 @@
   </div>
 </section>
 
-<form name="registerForm" class="form-horizontal" method="post" novalidate ng-submit="registerForm.$valid && register.submit()">
+<form name="registerForm" class="form-horizontal" method="post" novalidate ng-submit="registerForm.$valid && main.register.submit(registerForm)">
   <div class="modal fade" id="register-form" tabindex="-1" role="dialog" aria-labelledby="register-form" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -57,7 +58,7 @@
           </div>
           <div class="form-group">
             <div class="col-sm-10 col-sm-offset-1">
-              <button type="submit" class="btn btn-block btn-lg btn-primary btn-intro-cta" ng-click="submit()">Create my account »<span>And get immediate access to your email</span></button>
+              <button type="submit" class="btn btn-block btn-lg btn-primary btn-intro-cta">Create my account »<span>And get immediate access to your email</span></button>
             </div>
           </div>
         </div>
@@ -66,7 +67,7 @@
   </div>
 </form>
 
-<form name="loginForm" class="form-horizontal" method="post" novalidate ng-submit="loginForm.$valid && login.submit(loginForm)">
+<form name="loginForm" class="form-horizontal" method="post" novalidate ng-submit="loginForm.$valid && main.login.submit(loginForm)">
   <div class="modal fade" id="login-form" tabindex="-1" role="dialog" aria-labelledby="login-form" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -98,7 +99,7 @@
             <div class="checkbox clearfix">
               <div class="col-sm-4 col-sm-offset-3 col-xs-6">
                 <label>
-                  <input name="remember" value="checked" type="checkbox">Remember me
+                  <input name="remember" value="checked" type="checkbox" ng-model="login.remember">Remember me
                 </label>
               </div>
               <div class="col-sm-3 col-sm-offset-1 col-xs-6">
@@ -117,3 +118,4 @@
     </div>
   </div>
 </form>
+</div>
