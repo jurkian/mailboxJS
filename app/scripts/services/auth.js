@@ -25,11 +25,26 @@ app.factory('Auth', ['$http', function ($http) {
 
   	}, function() {
   		// Problems with getting user's data
+  		callback(false);
   	});
   };
 
   var _register = function(_name, _email, _password, callback) {
-  	// ...
+  	// API validation here...
+
+  	$http.get('models/user.json')
+  	.then(function(res) {
+  		// Change local user's data to the new ones
+  		res.data.name = _name;
+  		res.data.email = _email;
+  		res.data.password = _password;
+
+  		callback(true);
+
+  	}, function() {
+  		// Problems with registering user
+  		callback(false);
+  	});
   };
 
   return {

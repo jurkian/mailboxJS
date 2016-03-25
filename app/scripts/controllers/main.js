@@ -22,8 +22,13 @@ app.controller('MainCtrl', ['Auth', function(Auth) {
   this.register = {
     submit: function(form) {
       if (form.$valid) {
-        return true;
+        Auth.register(this.name, this.email, this.password, function(isRegistered) {
+        	if (isRegistered === true) {
+        		alert('You have been registered!');
+        	}
+        });
       }
     }
   };
+  
 }]);
