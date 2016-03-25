@@ -25,3 +25,14 @@ $icon-font-path: "../scripts/vendor/bootstrap-sass-official/assets/fonts/bootstr
     display:block; 
   }
 }
+
+/* Form validation */
+.form-group .help-block {
+  display: none;
+}
+
+.form-group.has-error .help-block {
+  display: block;
+}
+
+/* Dashboard */
