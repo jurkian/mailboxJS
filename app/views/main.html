@@ -31,7 +31,7 @@
           <div class="form-group" ng-class="{ 'has-error': registerForm.registerName.$invalid && registerForm.registerName.$dirty }">
             <label for="register-name" class="col-sm-3 control-label">Name</label>
             <div class="col-sm-8">
-              <input name="registerName" id="register-name" class="form-control" placeholder="Enter your name" type="text" ng-model="register.name" ng-minlength="2" ng-maxlength="20" required>
+              <input name="registerName" id="register-name" class="form-control" placeholder="Enter your name" type="text" ng-model="main.register.name" ng-minlength="2" ng-maxlength="20" required>
               <p ng-show="registerForm.registerName.$error.minlength" class="help-block">Your name is too short (min: 2)</p>
               <p ng-show="registerForm.registerName.$error.maxlength" class="help-block">Your name is too long (max: 20)</p>
               <p ng-show="registerForm.registerName.$error.required" class="help-block">Please enter your name</p>
@@ -41,7 +41,7 @@
           <div class="form-group" ng-class="{ 'has-error': registerForm.registerEmail.$invalid && registerForm.registerEmail.$dirty }">
             <label for="register-email" class="col-sm-3 control-label">Email</label>
             <div class="col-sm-8">
-              <input name="registerEmail" id="register-email" class="form-control" placeholder="Enter your email" type="email" ng-model="register.email" ng-minlength="6" required>
+              <input name="registerEmail" id="register-email" class="form-control" placeholder="Enter your email" type="email" ng-model="main.register.email" ng-minlength="6" required>
               <p ng-show="registerForm.registerEmail.$error.minlength" class="help-block">Your email is too short (min: 6)</p>
               <p ng-show="registerForm.registerEmail.$error.email" class="help-block">Please enter correct email</p>
               <p ng-show="registerForm.registerEmail.$error.required" class="help-block">Please enter your email</p>
@@ -51,7 +51,7 @@
           <div class="form-group" ng-class="{ 'has-error': registerForm.registerPassword.$invalid && registerForm.registerPassword.$dirty }">
             <label class="col-sm-3 control-label" for="register-password">Password</label>
             <div class="col-sm-8">
-              <input name="registerPassword" id="register-password" class="form-control" placeholder="Make sure it has at least 6 characters" type="password" ng-model="register.password" ng-minlength="6" required>
+              <input name="registerPassword" id="register-password" class="form-control" placeholder="Make sure it has at least 6 characters" type="password" ng-model="main.register.password" ng-minlength="6" required>
               <p ng-show="registerForm.registerPassword.$error.minlength" class="help-block">Your password is too short (min: 6)</p>
               <p ng-show="registerForm.registerPassword.$error.required" class="help-block">Please enter your password</p>
             </div>
@@ -79,7 +79,7 @@
           <div class="form-group" ng-class="{ 'has-error': loginForm.loginEmail.$invalid && loginForm.loginEmail.$dirty }">
             <label for="login-email" class="col-sm-3 control-label">Email</label>
             <div class="col-sm-8">
-              <input name="loginEmail" id="login-email" class="form-control" placeholder="Enter your email" type="email" ng-model="login.email" ng-minlength="6" required>
+              <input name="loginEmail" id="login-email" class="form-control" placeholder="Enter your email" type="email" ng-model="main.login.email" ng-minlength="6" required>
               <p ng-show="loginForm.loginEmail.$error.minlength" class="help-block">Your email is too short (min: 6)</p>
               <p ng-show="loginForm.loginEmail.$error.email" class="help-block">Please enter correct email</p>
               <p ng-show="loginForm.loginEmail.$error.required" class="help-block">Please enter your email</p>
@@ -89,7 +89,7 @@
           <div class="form-group" ng-class="{ 'has-error': loginForm.loginPassword.$invalid && loginForm.loginPassword.$dirty }">
             <label class="col-sm-3 control-label" for="login-password">Password</label>
             <div class="col-sm-8">
-              <input name="loginPassword" id="login-password" class="form-control" placeholder="Enter your password" type="password" ng-model="login.password" ng-minlength="6" required>
+              <input name="loginPassword" id="login-password" class="form-control" placeholder="Enter your password" type="password" ng-model="main.login.password" ng-minlength="6" required>
               <p ng-show="loginForm.loginPassword.$error.minlength" class="help-block">Your password is too short (min: 6)</p>
               <p ng-show="loginForm.loginPassword.$error.required" class="help-block">Please enter your password</p>
             </div>
@@ -99,7 +99,7 @@
             <div class="checkbox clearfix">
               <div class="col-sm-4 col-sm-offset-3 col-xs-6">
                 <label>
-                  <input name="remember" value="checked" type="checkbox" ng-model="login.remember">Remember me
+                  <input name="remember" value="checked" type="checkbox" ng-model="main.login.remember">Remember me
                 </label>
               </div>
               <div class="col-sm-3 col-sm-offset-1 col-xs-6">
