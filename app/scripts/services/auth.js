@@ -34,10 +34,8 @@ app.factory('Auth', ['$http', function ($http) {
 
   	$http.get('models/user.json')
   	.then(function(res) {
-  		// Change local user's data to the new ones
-  		res.data.name = _name;
-  		res.data.email = _email;
-  		res.data.password = _password;
+  		// Register new user
+  		// ...
 
   		callback(true);
 
