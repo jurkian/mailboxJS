@@ -3,14 +3,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h1 ng-controller="MainCtrl">
-          Welcome to the mailboxJS
-        </h1>
+        <h1>Welcome to the mailboxJS</h1>
         <div class="intro-buttons">
-          <a href="#/" class="btn btn-primary" data-toggle="modal" data-target="#register-form">
+          <a href="#/" class="btn btn-primary" ng-click="main.openRegisterModal()">
             Create an account
           </a>
-          <a href="#/" class="btn btn-success" data-toggle="modal" data-target="#login-form">
+          <a href="#/" class="btn btn-success" ng-click="main.openLoginModal()">
             Log in
           </a>
         </div>
@@ -18,104 +16,4 @@
     </div>
   </div>
 </section>
-
-<form name="registerForm" class="form-horizontal" method="post" novalidate ng-submit="registerForm.$valid && main.register.submit(registerForm)">
-  <div class="modal fade" id="register-form" tabindex="-1" role="dialog" aria-labelledby="register-form" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title">New account</h4>
-        </div>
-        <div class="modal-body">
-          <div class="form-group" ng-class="{ 'has-error': registerForm.registerName.$invalid && registerForm.registerName.$dirty }">
-            <label for="register-name" class="col-sm-3 control-label">Name</label>
-            <div class="col-sm-8">
-              <input name="registerName" id="register-name" class="form-control" placeholder="Enter your name" type="text" ng-model="main.register.name" ng-minlength="2" ng-maxlength="20" required>
-              <p ng-show="registerForm.registerName.$error.minlength" class="help-block">Your name is too short (min: 2)</p>
-              <p ng-show="registerForm.registerName.$error.maxlength" class="help-block">Your name is too long (max: 20)</p>
-              <p ng-show="registerForm.registerName.$error.required" class="help-block">Please enter your name</p>
-            </div>
-          </div>
-
-          <div class="form-group" ng-class="{ 'has-error': registerForm.registerEmail.$invalid && registerForm.registerEmail.$dirty }">
-            <label for="register-email" class="col-sm-3 control-label">Email</label>
-            <div class="col-sm-8">
-              <input name="registerEmail" id="register-email" class="form-control" placeholder="Enter your email" type="email" ng-model="main.register.email" ng-minlength="6" required>
-              <p ng-show="registerForm.registerEmail.$error.minlength" class="help-block">Your email is too short (min: 6)</p>
-              <p ng-show="registerForm.registerEmail.$error.email" class="help-block">Please enter correct email</p>
-              <p ng-show="registerForm.registerEmail.$error.required" class="help-block">Please enter your email</p>
-            </div>
-          </div>
-
-          <div class="form-group" ng-class="{ 'has-error': registerForm.registerPassword.$invalid && registerForm.registerPassword.$dirty }">
-            <label class="col-sm-3 control-label" for="register-password">Password</label>
-            <div class="col-sm-8">
-              <input name="registerPassword" id="register-password" class="form-control" placeholder="Make sure it has at least 6 characters" type="password" ng-model="main.register.password" ng-minlength="6" required>
-              <p ng-show="registerForm.registerPassword.$error.minlength" class="help-block">Your password is too short (min: 6)</p>
-              <p ng-show="registerForm.registerPassword.$error.required" class="help-block">Please enter your password</p>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-10 col-sm-offset-1">
-              <button type="submit" class="btn btn-block btn-lg btn-primary btn-intro-cta">Create my account »<span>And get immediate access to your email</span></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</form>
-
-<form name="loginForm" class="form-horizontal" method="post" novalidate ng-submit="loginForm.$valid && main.login.submit(loginForm)">
-  <div class="modal fade" id="login-form" tabindex="-1" role="dialog" aria-labelledby="login-form" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title">Login</h4>
-        </div>
-        <div class="modal-body">
-          <div class="form-group" ng-class="{ 'has-error': loginForm.loginEmail.$invalid && loginForm.loginEmail.$dirty }">
-            <label for="login-email" class="col-sm-3 control-label">Email</label>
-            <div class="col-sm-8">
-              <input name="loginEmail" id="login-email" class="form-control" placeholder="Enter your email" type="email" ng-model="main.login.email" ng-minlength="6" required>
-              <p ng-show="loginForm.loginEmail.$error.minlength" class="help-block">Your email is too short (min: 6)</p>
-              <p ng-show="loginForm.loginEmail.$error.email" class="help-block">Please enter correct email</p>
-              <p ng-show="loginForm.loginEmail.$error.required" class="help-block">Please enter your email</p>
-            </div>
-          </div>
-
-          <div class="form-group" ng-class="{ 'has-error': loginForm.loginPassword.$invalid && loginForm.loginPassword.$dirty }">
-            <label class="col-sm-3 control-label" for="login-password">Password</label>
-            <div class="col-sm-8">
-              <input name="loginPassword" id="login-password" class="form-control" placeholder="Enter your password" type="password" ng-model="main.login.password" ng-minlength="6" required>
-              <p ng-show="loginForm.loginPassword.$error.minlength" class="help-block">Your password is too short (min: 6)</p>
-              <p ng-show="loginForm.loginPassword.$error.required" class="help-block">Please enter your password</p>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="checkbox clearfix">
-              <div class="col-sm-4 col-sm-offset-3 col-xs-6">
-                <label>
-                  <input name="remember" value="checked" type="checkbox" ng-model="main.login.remember">Remember me
-                </label>
-              </div>
-              <div class="col-sm-3 col-sm-offset-1 col-xs-6">
-                <a href="#/">Forgot password</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-sm-10 col-sm-offset-1">
-              <button type="submit" class="btn btn-block btn-lg btn-primary btn-intro-cta">Go to my Dashboard »<span>And let me read my new emails</span></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</form>
 </div>

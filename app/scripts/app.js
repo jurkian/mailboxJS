@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('mailboxApp', ['ngRoute', 'ngSanitize']);
+var app = angular.module('mailboxApp', ['ngRoute', 'ui.bootstrap']);
 
 app.config(function($routeProvider) {
   $routeProvider
