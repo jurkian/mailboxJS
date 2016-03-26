@@ -1,3 +1,5 @@
+<div ng-controller="DashboardCtrl as db">
+<uib-alert ng-if="db.alert.get().msg" class="dashboard-alert" type="{{db.alert.get().type}}" close="db.closeAlert()" dismiss-on-timeout="10000">{{db.alert.get().msg}}</uib-alert>
 <section id="dashboard">
   <div class="container">
     <header class="row">
@@ -114,3 +116,4 @@
     </div>
   </div>
 </section>
+</div>

@@ -1,7 +1,15 @@
 'use strict';
 
-app.controller('MainCtrl', ['$uibModal', function($uibModal) {
+app.controller('MainCtrl', ['$uibModal', 'Alert', function($uibModal, Alert) {
 
+	// Alerts
+	this.alert = Alert;
+
+	this.closeAlert = function() {
+		Alert.clear();
+	};
+
+	// MODALS
   // Open modal with login/register forms
   this.openLoginModal = function() {
     var modalInstance = $uibModal.open({
@@ -27,41 +35,50 @@ app.controller('MainCtrl', ['$uibModal', function($uibModal) {
 // Available when the modal is opened
 
 // Login modal
-app.controller('LoginModalCtrl', ['$uibModalInstance', 'Auth', function($uibModalInstance, Auth) {
+app.controller('LoginModalCtrl', ['$uibModalInstance', 'Auth', 'Alert', '$location', '$timeout', function($uibModalInstance, Auth, Alert, $location, $timeout) {
   this.login = {
+  	close: function() {
+  	  $uibModalInstance.close();
+  	},
     submit: function(form) {
       if (form.$valid) {
         Auth.login(this.email, this.password, function(isLoggedIn) {
           if (isLoggedIn === true) {
-            alert('You have been logged in!');
+
+          	// Hide modal and redirect to Dashboard
+          	$uibModalInstance.close();
+          	$timeout(function() {
+          		$location.path('/dashboard');
+          	}, 700);
+
           } else {
-            alert('Your data is incorrect');
+          	
+          	// Hide modal and show alert
+          	$uibModalInstance.close();
+          	Alert.add('danger', 'Your data is incorrect');
           }
         });
       }
     }
-  };
-
-  this.close = function() {
-    $uibModalInstance.close();
   };
 }]);
 
 // Register modal
-app.controller('RegisterModalCtrl', ['$uibModalInstance', 'Auth', function($uibModalInstance, Auth) {
+app.controller('RegisterModalCtrl', ['$uibModalInstance', 'Auth', 'Alert', function($uibModalInstance, Auth, Alert) {
   this.register = {
+  	close: function() {
+  	  $uibModalInstance.close();
+  	},
     submit: function(form) {
       if (form.$valid) {
         Auth.register(this.name, this.email, this.password, function(isRegistered) {
           if (isRegistered === true) {
-            alert('You have been registered!');
+          	// Hide modal and show alert (confirmation)
+          	$uibModalInstance.close();
+          	Alert.add('success', 'You have been registered!');
           }
         });
       }
     }
-  };
-
-  this.close = function() {
-    $uibModalInstance.close();
   };
 }]);

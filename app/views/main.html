@@ -1,4 +1,5 @@
 <div ng-controller="MainCtrl as main">
+<uib-alert ng-if="main.alert.get().msg" class="intro-alert" type="{{main.alert.get().type}}" close="main.closeAlert()" dismiss-on-timeout="10000">{{main.alert.get().msg}}</uib-alert>
 <section id="intro">
   <div class="container">
     <div class="row">

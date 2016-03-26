@@ -16,6 +16,12 @@ $icon-font-path: "../scripts/vendor/bootstrap-sass-official/assets/fonts/bootstr
   align-content: center;
 }
 
+/* Alert */
+.intro-alert, .dashboard-alert {
+  text-align: center;
+  margin-bottom: 0;
+}
+
 /* Intro login/register form */
 .btn-intro-cta {
 
