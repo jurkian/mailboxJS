@@ -32,7 +32,7 @@ app.controller('DashboardCtrl', ['$http', '$scope', '$location', '$timeout', 'Al
 			authFailed();
 		}
 	});
-	
+
 	// Auth failed: show Alert and redirect to main page
 	var authFailed = function() {
 		Alert.add('danger', 'Authorization failed');

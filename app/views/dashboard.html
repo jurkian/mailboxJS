@@ -62,59 +62,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="msg in inbox">
+            <tr class="{{ msg.status }}" ng-repeat="msg in inbox">
               <td>{{ msg.id }}</td>
               <td>{{ msg.title }}</td>
               <td>{{ msg.from }}</td>
               <td>{{ msg.date }}</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo...</td>
-              <td>John Doe</td>
-              <td>23.03.2016</td>
-            </tr>
-            <tr class="active">
-              <td>2</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, aliquid.</td>
-              <td>John Doe</td>
-              <td>23.03.2016</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo...</td>
-              <td>John Doe</td>
-              <td>23.03.2016</td>
-            </tr>
-            <tr class="warning">
-              <td>4</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, molestias!</td>
-              <td>John Doe</td>
-              <td>23.03.2016</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo...</td>
-              <td>John Doe</td>
-              <td>23.03.2016</td>
-            </tr>
-            <tr class="success">
-              <td>6</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, perspiciatis?</td>
-              <td>John Doe</td>
-              <td>23.03.2016</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo...</td>
-              <td>John Doe</td>
-              <td>23.03.2016</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo...</td>
-              <td>John Doe</td>
-              <td>23.03.2016</td>
             </tr>
           </tbody>
         </table>
