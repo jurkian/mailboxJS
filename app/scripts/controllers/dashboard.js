@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('DashboardCtrl', ['$http', 'Alert', 'Auth', function($http, Alert, Auth) {
+app.controller('DashboardCtrl', ['$http', '$location', '$timeout', 'Alert', 'Auth', function($http, $location, $timeout, Alert, Auth) {
 	
 	// Alerts
 	this.alert = Alert;
@@ -19,10 +19,28 @@ app.controller('DashboardCtrl', ['$http', 'Alert', 'Auth', function($http, Alert
 		if (data !== false) {
 			user = data;
 
-			Auth.getInbox(data.email, function(data) {
+			Auth.getInbox(user.email, function(data) {
 				inbox = data;
+				authSuccess();
 			});
+
+		} else {
+			authFailed();
 		}
 	});
+
+	var authFailed = function() {
+		// Auth failed: show Alert and redirect to main page
+		Alert.add('danger', 'Authorization failed');
+		
+		$timeout(function() {
+			$location.path('/');
+		}, 1000);
+	};
+
+	// The moment when the user is authorized
+	var authSuccess = function() {
+		
+	};
 	
 }]);
