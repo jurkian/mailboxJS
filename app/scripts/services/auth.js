@@ -49,7 +49,7 @@ app.factory('Auth', ['$http', function ($http) {
   var _getUser = function(email, password, callback) {
     $http.get('models/user.json')
     .then(function(res) {
-      console.log(res);
+
       if (res.data.email === email && res.data.password === password) {
         callback(res.data);
       } else {
@@ -68,7 +68,6 @@ app.factory('Auth', ['$http', function ($http) {
   var _getInbox = function(email, callback) {
     $http.get('models/user-inbox.json')
     .then(function(res) {
-      console.log(res);
 
       if (res.data.email === email) {
         callback(res.data);

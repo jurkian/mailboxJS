@@ -1,6 +1,6 @@
 {
   "email": "example@user.com",
-  "data": [
+  "messages": [
     {
       "id": 1,
       "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",

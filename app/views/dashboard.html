@@ -24,7 +24,7 @@
     <div class="row">
       <div class="col-md-3 dashboard-sidebar">
         <header>
-          <h5>email@example.com</h5></header>
+          <h5>Hello, {{ user.name }}!</h5></header>
         <div class="well">
           <a href="#/dashboard" class="btn btn-block btn-primary" data-toggle="modal" data-target="#register-form">
   		      New email
@@ -32,7 +32,7 @@
           <ul class="list-group">
             <a href="#">
               <li class="list-group-item">
-                <span class="badge">14</span> Inbox
+                <span class="badge">{{ inbox.length }}</span> Inbox
               </li>
             </a>
             <a href="#">
@@ -62,6 +62,12 @@
             </tr>
           </thead>
           <tbody>
+            <tr ng-repeat="msg in inbox">
+              <td>{{ msg.id }}</td>
+              <td>{{ msg.title }}</td>
+              <td>{{ msg.from }}</td>
+              <td>{{ msg.date }}</td>
+            </tr>
             <tr>
               <td>1</td>
               <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo...</td>

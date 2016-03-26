@@ -1,7 +1,7 @@
 'use strict';
 
-app.controller('DashboardCtrl', ['$http', '$location', '$timeout', 'Alert', 'Auth', function($http, $location, $timeout, Alert, Auth) {
-	
+app.controller('DashboardCtrl', ['$http', '$scope', '$location', '$timeout', 'Alert', 'Auth', function($http, $scope, $location, $timeout, Alert, Auth) {
+
 	// Alerts
 	this.alert = Alert;
 
@@ -11,16 +11,20 @@ app.controller('DashboardCtrl', ['$http', '$location', '$timeout', 'Alert', 'Aut
 
 	// Get user's data and emails
 	var email = 'example@user.com',
-	password = 'example',
-	user = '',
-	inbox = '';
+	password = 'example';
 
-	Auth.getUser(email, password, function(data) {
-		if (data !== false) {
-			user = data;
+	$scope.user = {};
+	$scope.user.name = '';
+	$scope.user.email = '';
+	$scope.inbox = '';
 
-			Auth.getInbox(user.email, function(data) {
-				inbox = data;
+	Auth.getUser(email, password, function(userData) {
+		if (userData !== false) {
+			$scope.user.name = userData.name;
+			$scope.user.email = userData.email;
+
+			Auth.getInbox(userData.email, function(inboxData) {
+				$scope.inbox = inboxData.messages;
 				authSuccess();
 			});
 
@@ -28,9 +32,9 @@ app.controller('DashboardCtrl', ['$http', '$location', '$timeout', 'Alert', 'Aut
 			authFailed();
 		}
 	});
-
+	
+	// Auth failed: show Alert and redirect to main page
 	var authFailed = function() {
-		// Auth failed: show Alert and redirect to main page
 		Alert.add('danger', 'Authorization failed');
 		
 		$timeout(function() {
@@ -40,7 +44,7 @@ app.controller('DashboardCtrl', ['$http', '$location', '$timeout', 'Alert', 'Aut
 
 	// The moment when the user is authorized
 	var authSuccess = function() {
-		
+
 	};
 	
 }]);
