@@ -3,8 +3,8 @@
   "messages": [
     {
       "id": 1,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-      "from": "john@example.com",
+      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi?",
+      "from": "merry@merrysite.com",
       "date": "23.03.2016",
       "status": ""
     }, {
@@ -15,14 +15,14 @@
       "status": "active"
     }, {
       "id": 3,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-      "from": "john@example.com",
+      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo!",
+      "from": "merry@merrysite.com",
       "date": "23.03.2016",
       "status": ""
     }, {
       "id": 4,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-      "from": "john@example.com",
+      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
+      "from": "merry@merrysite.com",
       "date": "23.03.2016",
       "status": "warning"
     }, {
@@ -33,8 +33,8 @@
       "status": ""
     }, {
       "id": 6,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-      "from": "john@example.com",
+      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias.",
+      "from": "merry@merrysite.com",
       "date": "23.03.2016",
       "status": ""
     }, {

@@ -13,7 +13,7 @@
               <form>
                 <div class="form-group has-success">
                   <label class="control-label"></label>
-                  <input class="form-control input-lg" type="text" placeholder="Search for email..." autofocus="autofocus">
+                  <input class="form-control input-lg" type="text" placeholder="Search for email..." autofocus="autofocus" ng-model="findEmail">
                 </div>
               </form>
             </div>
@@ -62,7 +62,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="{{ msg.status }}" ng-repeat="msg in inbox">
+            <tr class="{{ msg.status }}" ng-repeat="msg in inbox | filter: findEmail">
               <td>{{ msg.id }}</td>
               <td>{{ msg.title }}</td>
               <td>{{ msg.from }}</td>
