@@ -1,21 +1,26 @@
-[{
-  "id": 1,
-  "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-  "from": "john@example.com",
-  "date": "23.03.2016"
-}, {
-  "id": 2,
-  "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-  "from": "john@example.com",
-  "date": "23.03.2016"
-}, {
-  "id": 3,
-  "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-  "from": "john@example.com",
-  "date": "23.03.2016"
-}, {
-  "id": 4,
-  "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-  "from": "john@example.com",
-  "date": "23.03.2016"
-}]
+{
+  "email": "example@user.com",
+  "data": [
+    {
+      "id": 1,
+      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+      "from": "john@example.com",
+      "date": "23.03.2016"
+    }, {
+      "id": 2,
+      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+      "from": "john@example.com",
+      "date": "23.03.2016"
+    }, {
+      "id": 3,
+      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+      "from": "john@example.com",
+      "date": "23.03.2016"
+    }, {
+      "id": 4,
+      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+      "from": "john@example.com",
+      "date": "23.03.2016"
+    }
+  ]
+}

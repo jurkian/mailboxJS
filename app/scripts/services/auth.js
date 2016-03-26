@@ -45,8 +45,49 @@ app.factory('Auth', ['$http', function ($http) {
   	});
   };
 
+  // Get user's data
+  var _getUser = function(email, password, callback) {
+    $http.get('models/user.json')
+    .then(function(res) {
+      console.log(res);
+      if (res.data.email === email && res.data.password === password) {
+        callback(res.data);
+      } else {
+        callback(false);
+      }
+
+    }, function() {
+
+      // Problems with getting user
+      callback(false);
+
+    });
+  };
+
+  // Get inbox for a particular email
+  var _getInbox = function(email, callback) {
+    $http.get('models/user-inbox.json')
+    .then(function(res) {
+      console.log(res);
+
+      if (res.data.email === email) {
+        callback(res.data);
+      } else {
+        callback(false);
+      }
+
+    }, function() {
+
+      // Problems with getting user inbox
+      callback(false);
+
+    });
+  };
+
   return {
   	login: _login,
-  	register: _register
+  	register: _register,
+    getUser: _getUser,
+    getInbox: _getInbox
   };
 }]);
