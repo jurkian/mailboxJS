@@ -26,26 +26,18 @@
         <header>
           <h5>Hello, {{ user.name }}!</h5></header>
         <div class="well">
-          <a href="#/dashboard" class="btn btn-block btn-primary" data-toggle="modal" data-target="#register-form">
-  		      New email
+          <a href="#/dashboard" class="btn btn-block btn-lg btn-primary">
+  		      New email 
   		    </a>
-          <ul class="list-group">
-            <a href="#">
-              <li class="list-group-item">
-                <span class="badge">{{ inbox.length }}</span> Inbox
-              </li>
-            </a>
-            <a href="#">
-              <li class="list-group-item">
-                <span class="badge">2</span> Sent
-              </li>
-            </a>
-            <a href="#">
-              <li class="list-group-item">
-                <span class="badge">1</span> Trash
-              </li>
-            </a>
-          </ul>
+          <a href="#/dashboard" class="btn btn-block btn-sm btn-success">
+            Inbox <span class="text-right">({{ inbox.length }})</span>
+          </a>
+          <a href="#/dashboard" class="btn btn-block btn-sm btn-success">
+            Sent <span class="text-right">(9)</span>
+          </a>
+          <a href="#/dashboard" class="btn btn-block btn-sm btn-success">
+            Trash <span class="text-right">(0)</span>
+          </a>
         </div>
       </div>
       <div class="col-md-9 dashboard-messages">
