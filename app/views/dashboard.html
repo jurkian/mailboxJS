@@ -26,7 +26,7 @@
         <header>
           <h5>Hello, {{ user.name }}!<a href="#/" class="btn btn-xs pull-right">Logout</a></h5></header>
         <div class="well">
-          <a href="#/dashboard" class="btn btn-block btn-lg btn-primary">
+          <a href="#/dashboard" ng-click="db.openNewEmailModal()" class="btn btn-block btn-lg btn-primary">
   		      New email
   		    </a>
           <a href="#/dashboard" ng-click="db.changeView('/dashboard')" class="btn btn-block btn-sm btn-success">

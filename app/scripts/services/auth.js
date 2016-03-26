@@ -83,10 +83,19 @@ app.factory('Auth', ['$http', function ($http) {
     });
   };
 
+  // Send email
+  var _sendEmail = function(to, subject, message, callback) {
+    // Send email
+    // and put it to "sent" list ...
+    
+    callback(true);
+  };
+
   return {
   	login: _login,
   	register: _register,
     getUser: _getUser,
-    getMailbox: _getMailbox
+    getMailbox: _getMailbox,
+    sendEmail: _sendEmail
   };
 }]);
