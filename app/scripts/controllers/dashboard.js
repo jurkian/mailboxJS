@@ -11,9 +11,22 @@ app.controller('DashboardCtrl', ['$http', '$scope', '$location', '$timeout', 'Al
 
 	// Sidebar paths change
 	this.urlPath = $location.path();
+	$scope.searchModel = {};
+	$scope.searchModel.name = 'findEmailInbox';
 
+	// Switch view and the behavior of search bar
+	// basing on selected option
 	this.changeView = function(view) {
     this.urlPath = view;
+
+    switch (view) {
+    	case '/dashboard/sent':
+    		$scope.searchModel.name = 'findEmailSent'; 
+    		break;
+    	case '/dashboard/trash':
+    		$scope.searchModel.name = 'findEmailTrash';
+    		break;
+    }
 	};
 
 

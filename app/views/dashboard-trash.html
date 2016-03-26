@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="{{ msg.status }}" ng-repeat="msg in inbox">
+    <tr class="{{ msg.status }}" ng-repeat="msg in inbox | filter: searchModel[name]">
       <td>{{ msg.id }}</td>
       <td>{{ msg.title }}</td>
       <td>{{ msg.from }}</td>
