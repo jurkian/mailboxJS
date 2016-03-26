@@ -42,3 +42,6 @@ $icon-font-path: "../scripts/vendor/bootstrap-sass-official/assets/fonts/bootstr
 }
 
 /* Dashboard */
+a[ng-click] {
+  cursor: pointer;
+}

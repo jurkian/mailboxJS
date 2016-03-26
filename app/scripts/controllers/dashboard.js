@@ -9,6 +9,14 @@ app.controller('DashboardCtrl', ['$http', '$scope', '$location', '$timeout', 'Al
 		Alert.clear();
 	};
 
+	// Sidebar paths change
+	this.urlPath = $location.path();
+
+	this.changeView = function(view) {
+    this.urlPath = view;
+	};
+
+
 	// Get user's data and emails
 	var email = 'example@user.com',
 	password = 'example';
@@ -46,5 +54,5 @@ app.controller('DashboardCtrl', ['$http', '$scope', '$location', '$timeout', 'Al
 	var authSuccess = function() {
 
 	};
-	
+
 }]);
