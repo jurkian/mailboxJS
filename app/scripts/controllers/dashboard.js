@@ -32,20 +32,20 @@ app.controller('DashboardCtrl', ['$http', '$scope', '$location', '$timeout', 'Al
 
 	// Get user's data and emails
 	var email = 'example@user.com',
-	password = 'example';
+			password = 'example';
 
 	$scope.user = {};
 	$scope.user.name = '';
 	$scope.user.email = '';
-	$scope.inbox = '';
+	$scope.mailbox = '';
 
 	Auth.getUser(email, password, function(userData) {
 		if (userData !== false) {
 			$scope.user.name = userData.name;
 			$scope.user.email = userData.email;
 
-			Auth.getInbox(userData.email, function(inboxData) {
-				$scope.inbox = inboxData.messages;
+			Auth.getMailbox(userData.email, function(mailboxData) {
+				$scope.mailbox = mailboxData;
 				authSuccess();
 			});
 

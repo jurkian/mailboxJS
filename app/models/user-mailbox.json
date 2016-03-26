@@ -1,6 +1,6 @@
 {
   "email": "example@user.com",
-  "messages": [
+  "inbox": [
     {
       "id": 1,
       "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi?",
@@ -61,6 +61,72 @@
       "from": "john@example.com",
       "date": "23.03.2016",
       "status": ""
+    }
+  ],
+  "sent": [
+    {
+      "id": 1,
+      "title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Sequi?",
+      "from": "merry@merrysite.com",
+      "date": "23.03.2016",
+      "status": ""
+    }, {
+      "id": 2,
+      "title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+      "from": "john@example.com",
+      "date": "23.03.2016",
+      "status": "active"
+    }, {
+      "id": 3,
+      "title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Explicabo!",
+      "from": "merry@merrysite.com",
+      "date": "23.03.2016",
+      "status": ""
+    }, {
+      "id": 4,
+      "title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
+      "from": "merry@merrysite.com",
+      "date": "23.03.2016",
+      "status": "warning"
+    }, {
+      "id": 5,
+      "title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
+      "from": "merry@merrysite.com",
+      "date": "23.03.2016",
+      "status": ""
+    }, {
+      "id": 6,
+      "title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
+      "from": "merry@merrysite.com",
+      "date": "23.03.2016",
+      "status": "warning"
+    }
+  ],
+  "trash": [
+    {
+      "id": 1,
+      "title": "Trash ipsum dolor sit amet, consectetur adipisicing elit. Sequi?",
+      "from": "merry@merrysite.com",
+      "date": "23.03.2016",
+      "status": ""
+    }, {
+      "id": 2,
+      "title": "Trash ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+      "from": "john@example.com",
+      "date": "23.03.2016",
+      "status": "active"
+    }, {
+      "id": 3,
+      "title": "Trash ipsum dolor sit amet, consectetur adipisicing elit. Explicabo!",
+      "from": "merry@merrysite.com",
+      "date": "23.03.2016",
+      "status": ""
+    }, {
+      "id": 4,
+      "title": "Trash ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
+      "from": "merry@merrysite.com",
+      "date": "23.03.2016",
+      "status": "warning"
     }
   ]
 }

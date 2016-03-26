@@ -65,8 +65,8 @@ app.factory('Auth', ['$http', function ($http) {
   };
 
   // Get inbox for a particular email
-  var _getInbox = function(email, callback) {
-    $http.get('models/user-inbox.json')
+  var _getMailbox = function(email, callback) {
+    $http.get('models/user-mailbox.json')
     .then(function(res) {
 
       if (res.data.email === email) {
@@ -87,6 +87,6 @@ app.factory('Auth', ['$http', function ($http) {
   	login: _login,
   	register: _register,
     getUser: _getUser,
-    getInbox: _getInbox
+    getMailbox: _getMailbox
   };
 }]);

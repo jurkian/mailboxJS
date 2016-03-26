@@ -30,13 +30,13 @@
   		      New email
   		    </a>
           <a href="#/dashboard" ng-click="db.changeView('/dashboard')" class="btn btn-block btn-sm btn-success">
-            Inbox <span class="text-right">({{ inbox.length }})</span>
+            Inbox <span class="text-right">({{ mailbox.inbox.length }})</span>
           </a>
           <a href="#/dashboard" ng-click="db.changeView('/dashboard/sent')" class="btn btn-block btn-sm btn-success">
-            Sent <span class="text-right">(9)</span>
+            Sent <span class="text-right">({{ mailbox.sent.length }})</span>
           </a>
           <a href="#/dashboard" ng-click="db.changeView('/dashboard/trash')" class="btn btn-block btn-sm btn-success">
-            Trash <span class="text-right">(0)</span>
+            Trash <span class="text-right">({{ mailbox.trash.length }})</span>
           </a>
         </div>
       </div>
