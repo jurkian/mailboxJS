@@ -47,6 +47,7 @@ app.controller('LoginModalCtrl', ['$uibModalInstance', 'Auth', 'Alert', '$locati
 
           	// Hide modal and redirect to Dashboard
           	$uibModalInstance.close();
+            Alert.clear();
           	$timeout(function() {
           		$location.path('/dashboard');
           	}, 700);
@@ -75,6 +76,7 @@ app.controller('RegisterModalCtrl', ['$uibModalInstance', 'Auth', 'Alert', funct
           if (isRegistered === true) {
           	// Hide modal and show alert (confirmation)
           	$uibModalInstance.close();
+            Alert.clear();
           	Alert.add('success', 'You have been registered!');
           }
         });
