@@ -58,7 +58,7 @@ app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout
 
 			// Get category and email ID for single email view
 			var emailId = $routeParams.emailId;
-			var dashboardView = $location.path().split('/')[2]; // /dashboard/view/id
+			var dashboardView = $routeParams.dbTab; // /dashboard/tab/id
 
 			// (-1 because email IDs in address start from 1)
 			var thisEmail = vm.mailbox[dashboardView][emailId-1];
