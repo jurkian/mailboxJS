@@ -16,8 +16,6 @@ app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout
 			password = 'example';
 
 	vm.user = {};
-	vm.user.name = '';
-	vm.user.email = '';
 	vm.mailbox = '';
 
 	Auth.getUser(email, password, function(userData) {
