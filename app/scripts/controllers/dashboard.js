@@ -1,30 +1,32 @@
 'use strict';
 
-app.controller('DashboardCtrl', ['$http', '$scope', '$location', '$timeout', 'Alert', 'Auth', '$uibModal', function($http, $scope, $location, $timeout, Alert, Auth, $uibModal) {
+app.controller('DashboardCtrl', ['$http', '$location', '$timeout', 'Alert', 'Auth', '$uibModal', function($http, $location, $timeout, Alert, Auth, $uibModal) {
+
+	var vm = this; // vm stands for ViewModel
 
 	// Alerts
-	this.alert = Alert;
+	vm.alert = Alert;
 
-	this.closeAlert = function() {
+	vm.closeAlert = function() {
 		Alert.clear();
 	};
 
 	// Sidebar paths change
-	this.urlPath = $location.path();
-	$scope.searchModel = {};
-	$scope.searchModel.name = 'findEmailInbox';
+	vm.urlPath = $location.path();
+	vm.searchModel = {};
+	vm.searchModel.name = 'findEmailInbox'; // Search for emails in inbox by default
 
 	// Switch view and the behavior of search bar
-	// basing on selected option
-	this.changeView = function(view) {
-    this.urlPath = view;
+	// basing on selected tab: inbox, sent or trash
+	vm.changeView = function(view) {
+    vm.urlPath = view;
 
     switch (view) {
     	case '/dashboard/sent':
-    		$scope.searchModel.name = 'findEmailSent'; 
+    		vm.searchModel.name = 'findEmailSent'; 
     		break;
     	case '/dashboard/trash':
-    		$scope.searchModel.name = 'findEmailTrash';
+    		vm.searchModel.name = 'findEmailTrash';
     		break;
     }
 	};
@@ -33,18 +35,18 @@ app.controller('DashboardCtrl', ['$http', '$scope', '$location', '$timeout', 'Al
 	var email = 'example@user.com',
 			password = 'example';
 
-	$scope.user = {};
-	$scope.user.name = '';
-	$scope.user.email = '';
-	$scope.mailbox = '';
+	vm.user = {};
+	vm.user.name = '';
+	vm.user.email = '';
+	vm.mailbox = '';
 
 	Auth.getUser(email, password, function(userData) {
 		if (userData !== false) {
-			$scope.user.name = userData.name;
-			$scope.user.email = userData.email;
+			vm.user.name = userData.name;
+			vm.user.email = userData.email;
 
 			Auth.getMailbox(userData.email, function(mailboxData) {
-				$scope.mailbox = mailboxData;
+				vm.mailbox = mailboxData;
 				authSuccess();
 			});
 
@@ -68,7 +70,7 @@ app.controller('DashboardCtrl', ['$http', '$scope', '$location', '$timeout', 'Al
 	};
 
 	// Create new email modal
-  this.openNewEmailModal = function() {
+  vm.openNewEmailModal = function() {
     var modalInstance = $uibModal.open({
       animation: true,
       controller: 'NewEmailCtrl',
@@ -81,7 +83,9 @@ app.controller('DashboardCtrl', ['$http', '$scope', '$location', '$timeout', 'Al
 
 // New email controller
 app.controller('NewEmailCtrl', ['$uibModalInstance', 'Auth', 'Alert', function($uibModalInstance, Auth, Alert) {
-  this.newEmail = {
+	var vm = this;
+
+  vm.newEmail = {
   	close: function() {
   	  $uibModalInstance.close();
   	},

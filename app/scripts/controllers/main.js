@@ -2,16 +2,18 @@
 
 app.controller('MainCtrl', ['$uibModal', 'Alert', function($uibModal, Alert) {
 
-	// Alerts
-	this.alert = Alert;
+  var vm = this; // vm stands for ViewModel
 
-	this.closeAlert = function() {
+	// Alerts
+	vm.alert = Alert;
+
+	vm.closeAlert = function() {
 		Alert.clear();
 	};
 
 	// MODALS
   // Open modal with login/register forms
-  this.openLoginModal = function() {
+  vm.openLoginModal = function() {
     var modalInstance = $uibModal.open({
       animation: true,
       controller: 'LoginModalCtrl',
@@ -20,7 +22,7 @@ app.controller('MainCtrl', ['$uibModal', 'Alert', function($uibModal, Alert) {
     });
   };
 
-  this.openRegisterModal = function() {
+  vm.openRegisterModal = function() {
     var modalInstance = $uibModal.open({
       animation: true,
       controller: 'RegisterModalCtrl',
@@ -36,7 +38,9 @@ app.controller('MainCtrl', ['$uibModal', 'Alert', function($uibModal, Alert) {
 
 // Login modal
 app.controller('LoginModalCtrl', ['$uibModalInstance', 'Auth', 'Alert', '$location', '$timeout', function($uibModalInstance, Auth, Alert, $location, $timeout) {
-  this.login = {
+  var vm = this;
+
+  vm.login = {
   	close: function() {
   	  $uibModalInstance.close();
   	},
@@ -66,7 +70,9 @@ app.controller('LoginModalCtrl', ['$uibModalInstance', 'Auth', 'Alert', '$locati
 
 // Register modal
 app.controller('RegisterModalCtrl', ['$uibModalInstance', 'Auth', 'Alert', function($uibModalInstance, Auth, Alert) {
-  this.register = {
+  var vm = this;
+
+  vm.register = {
   	close: function() {
   	  $uibModalInstance.close();
   	},
@@ -76,7 +82,6 @@ app.controller('RegisterModalCtrl', ['$uibModalInstance', 'Auth', 'Alert', funct
           if (isRegistered === true) {
           	// Hide modal and show alert (confirmation)
           	$uibModalInstance.close();
-            Alert.clear();
           	Alert.add('success', 'You have been registered!');
           }
         });
