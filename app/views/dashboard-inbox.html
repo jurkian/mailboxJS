@@ -13,7 +13,7 @@
   <tbody>
     <tr class="{{ msg.status }}" ng-repeat="msg in db.mailbox.inbox | filter: searchModel[name]">
       <td>{{ msg.id }}</td>
-      <td>{{ msg.title }}</td>
+      <td><a href="#/dashboard/inbox/{{ msg.id }}">{{ msg.title }}</a></td>
       <td>{{ msg.from }}</td>
       <td>{{ msg.date }}</td>
     </tr>

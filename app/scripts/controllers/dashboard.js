@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('DashboardCtrl', ['$http', '$location', '$timeout', 'Alert', 'Auth', '$uibModal', function($http, $location, $timeout, Alert, Auth, $uibModal) {
+app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout', 'Alert', 'Auth', '$uibModal', function($http, $routeParams, $location, $timeout, Alert, Auth, $uibModal) {
 
 	var vm = this; // vm stands for ViewModel
 
@@ -9,26 +9,6 @@ app.controller('DashboardCtrl', ['$http', '$location', '$timeout', 'Alert', 'Aut
 
 	vm.closeAlert = function() {
 		Alert.clear();
-	};
-
-	// Sidebar paths change
-	vm.urlPath = $location.path();
-	vm.searchModel = {};
-	vm.searchModel.name = 'findEmailInbox'; // Search for emails in inbox by default
-
-	// Switch view and the behavior of search bar
-	// basing on selected tab: inbox, sent or trash
-	vm.changeView = function(view) {
-    vm.urlPath = view;
-
-    switch (view) {
-    	case '/dashboard/sent':
-    		vm.searchModel.name = 'findEmailSent'; 
-    		break;
-    	case '/dashboard/trash':
-    		vm.searchModel.name = 'findEmailTrash';
-    		break;
-    }
 	};
 
 	// Get user's data and emails
@@ -66,7 +46,35 @@ app.controller('DashboardCtrl', ['$http', '$location', '$timeout', 'Alert', 'Aut
 
 	// The moment when the user is authorized
 	var authSuccess = function() {
+		
+		var isSingleEmailView = new RegExp(/dashboard\/[a-z]+\/[0-9]+$/);
 
+		// Get current path for view switch
+		// If path matches "dashboard/.../ID" load single email view
+		if (isSingleEmailView.test($location.path())) {
+
+			// Simplify the path for switch
+			vm.urlPath = '/dashboard/email';
+
+			// Get category and email ID for single email view
+			var emailId = $routeParams.emailId;
+			var dashboardView = $location.path().split('/')[2]; // /dashboard/view/id
+
+			// (-1 because email IDs in address start from 1)
+			var thisEmail = vm.mailbox[dashboardView][emailId-1];
+
+			vm.emailFrom = thisEmail.from;
+			vm.emailTitle = thisEmail.title;
+			vm.emailDate = thisEmail.date;
+			vm.emailMessage = thisEmail.message;
+
+		} else {
+			vm.urlPath = $location.path();
+		}
+
+		// Activate search box - in inbox by default
+		vm.searchModel = {};
+		vm.searchModel.name = 'findEmailInbox';
 	};
 
 	// Create new email modal

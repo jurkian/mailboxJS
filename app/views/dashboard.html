@@ -29,13 +29,13 @@
           <a href="#/dashboard" ng-click="db.openNewEmailModal()" class="btn btn-block btn-lg btn-primary">
   		      New email
   		    </a>
-          <a href="#/dashboard" ng-click="db.changeView('/dashboard')" class="btn btn-block btn-sm btn-success">
+          <a href="#/dashboard" class="btn btn-block btn-sm btn-success">
             Inbox <span class="text-right">({{ db.mailbox.inbox.length }})</span>
           </a>
-          <a href="#/dashboard" ng-click="db.changeView('/dashboard/sent')" class="btn btn-block btn-sm btn-success">
+          <a href="#/dashboard/sent" class="btn btn-block btn-sm btn-success">
             Sent <span class="text-right">({{ db.mailbox.sent.length }})</span>
           </a>
-          <a href="#/dashboard" ng-click="db.changeView('/dashboard/trash')" class="btn btn-block btn-sm btn-success">
+          <a href="#/dashboard/trash" class="btn btn-block btn-sm btn-success">
             Trash <span class="text-right">({{ db.mailbox.trash.length }})</span>
           </a>
         </div>
@@ -51,6 +51,9 @@
         </div>
         <div ng-switch-when="/dashboard/trash">
             <ng-include src="'views/dashboard-trash.html'"></ng-include>
+        </div>
+        <div ng-switch-when="/dashboard/email"> 
+            <ng-include src="'views/dashboard-single.html'"></ng-include>
         </div>
         <div ng-switch-default="/dashboard">
             <ng-include src="'views/dashboard-inbox.html'"></ng-include>
