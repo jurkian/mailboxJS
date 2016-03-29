@@ -1,65 +1,64 @@
 <div ng-controller="DashboardCtrl as db">
-<uib-alert ng-if="db.alert.get().msg" class="dashboard-alert" type="{{db.alert.get().type}}" close="db.closeAlert()" dismiss-on-timeout="10000">{{db.alert.get().msg}}</uib-alert>
-<section id="dashboard">
-  <div class="container">
-    <header class="row">
-      <div class="col-md-12">
-        <header class="page-header">
-          <div class="row">
-            <div class="col-md-6">
-              <h1>mailboxJS</h1>
-            </div>
-            <div class="col-md-6">
-              <form>
-                <div class="form-group has-success">
-                  <label class="control-label"></label>
-                  <input class="form-control input-lg" type="text" placeholder="Search for email..." autofocus="autofocus" ng-model="searchModel[name]">
-                </div>
-              </form>
-            </div>
-          </div>
-        </header>
-      </div>
-    </header>
-    <div class="row">
-      <div class="col-md-3 dashboard-sidebar">
-        <header>
-          <h5>Hello, {{ db.user.name }}!<a href="#/" class="btn btn-xs pull-right">Logout</a></h5></header>
-        <div class="well">
-          <a href="#/dashboard" ng-click="db.openNewEmailModal()" class="btn btn-block btn-lg btn-primary">
-  		      New email
-  		    </a>
-          <a href="#/dashboard" class="btn btn-block btn-sm btn-success">
-            Inbox <span class="text-right">({{ db.mailbox.inbox.length }})</span>
-          </a>
-          <a href="#/dashboard/sent" class="btn btn-block btn-sm btn-success">
-            Sent <span class="text-right">({{ db.mailbox.sent.length }})</span>
-          </a>
-          <a href="#/dashboard/trash" class="btn btn-block btn-sm btn-success">
-            Trash <span class="text-right">({{ db.mailbox.trash.length }})</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Load views basing on location path -->
-      <div class="col-md-9 dashboard-messages" ng-switch="db.urlPath">
-        <div ng-switch-when="/dashboard">
-            <ng-include src="'views/dashboard-inbox.html'"></ng-include>
-        </div>
-        <div ng-switch-when="/dashboard/sent">
-            <ng-include src="'views/dashboard-sent.html'"></ng-include>
-        </div>
-        <div ng-switch-when="/dashboard/trash">
-            <ng-include src="'views/dashboard-trash.html'"></ng-include>
-        </div>
-        <div ng-switch-when="/dashboard/email"> 
-            <ng-include src="'views/dashboard-single.html'"></ng-include>
-        </div>
-        <div ng-switch-default="/dashboard">
-            <ng-include src="'views/dashboard-inbox.html'"></ng-include>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+	<uib-alert ng-if="db.alert.get().msg" class="dashboard-alert" type="{{db.alert.get().type}}" close="db.closeAlert()" dismiss-on-timeout="10000">{{db.alert.get().msg}}</uib-alert>
+	<section id="dashboard">
+		<div class="container">
+			<header class="row">
+				<div class="col-md-12">
+					<header class="page-header">
+						<div class="row">
+							<div class="col-md-6">
+								<h1>mailboxJS</h1>
+							</div>
+							<div class="col-md-6">
+								<form>
+									<div class="form-group has-success">
+										<label class="control-label"></label>
+										<input class="form-control input-lg" type="text" placeholder="Search for email..." autofocus="autofocus" ng-model="searchModel[name]">
+									</div>
+								</form>
+							</div>
+						</div>
+					</header>
+				</div>
+			</header>
+			<div class="row">
+				<div class="col-md-3 dashboard-sidebar">
+					<header>
+						<h5>Hello, {{ db.user.name }}!<a href="#/" class="btn btn-xs pull-right">Logout</a></h5></header>
+					<div class="well">
+						<a href="#/dashboard" ng-click="db.openNewEmailModal()" class="btn btn-block btn-lg btn-primary">
+						New email
+					</a>
+						<a href="#/dashboard" class="btn btn-block btn-sm btn-success">
+						Inbox <span class="text-right">({{ db.mailbox.inbox.length }})</span>
+					</a>
+						<a href="#/dashboard/sent" class="btn btn-block btn-sm btn-success">
+						Sent <span class="text-right">({{ db.mailbox.sent.length }})</span>
+					</a>
+						<a href="#/dashboard/trash" class="btn btn-block btn-sm btn-success">
+						Trash <span class="text-right">({{ db.mailbox.trash.length }})</span>
+					</a>
+					</div>
+				</div>
+				<!-- Load views basing on location path -->
+				<div class="col-md-9 dashboard-messages" ng-switch="db.urlPath">
+					<div ng-switch-when="/dashboard">
+						<ng-include src="'views/dashboard-inbox.html'"></ng-include>
+					</div>
+					<div ng-switch-when="/dashboard/sent">
+						<ng-include src="'views/dashboard-sent.html'"></ng-include>
+					</div>
+					<div ng-switch-when="/dashboard/trash">
+						<ng-include src="'views/dashboard-trash.html'"></ng-include>
+					</div>
+					<div ng-switch-when="/dashboard/email">
+						<ng-include src="'views/dashboard-single.html'"></ng-include>
+					</div>
+					<div ng-switch-default="/dashboard">
+						<ng-include src="'views/dashboard-inbox.html'"></ng-include>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </div>

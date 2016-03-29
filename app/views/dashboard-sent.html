@@ -1,21 +1,21 @@
 <header>
-  <h5>Sent</h5>
+	<h5>Sent</h5>
 </header>
 <table class="table table-striped table-hover ">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Title</th>
-      <th>From</th>
-      <th>Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="{{ msg.status }}" ng-repeat="msg in db.mailbox.sent | filter: searchModel[name]">
-      <td>{{ msg.id }}</td>
-      <td><a href="#/dashboard/sent/{{ msg.id }}">{{ msg.title | truncate: 65 }}</a></td>
-      <td>{{ msg.from }}</td>
-      <td>{{ msg.date }}</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Title</th>
+			<th>From</th>
+			<th>Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="{{ msg.status }}" ng-repeat="msg in db.mailbox.sent | filter: searchModel[name]">
+			<td>{{ msg.id }}</td>
+			<td><a href="#/dashboard/sent/{{ msg.id }}">{{ msg.title | truncate: 65 }}</a></td>
+			<td>{{ msg.from }}</td>
+			<td>{{ msg.date }}</td>
+		</tr>
+	</tbody>
 </table>

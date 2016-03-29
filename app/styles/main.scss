@@ -1,52 +1,61 @@
 $icon-font-path: "../scripts/vendor/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 // endbower
-
 @import "../scripts/vendor/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 
 /* MailboxJS */
 
+
 /* Intro section */
+
 #intro {
-  background: url('../images/background-3.jpg') no-repeat;
-  background-size: cover;
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  align-content: center;
+	background: url('../images/background-3.jpg') no-repeat;
+	background-size: cover;
+	display: flex;
+	min-height: 100vh;
+	align-items: center;
+	align-content: center;
 }
+
 
 /* Alert */
-.intro-alert, .dashboard-alert {
-  text-align: center;
-  margin-bottom: 0;
-  z-index: 99;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+
+.intro-alert,
+.dashboard-alert {
+	text-align: center;
+	margin-bottom: 0;
+	z-index: 99;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 }
+
 
 /* Intro login/register form */
-.btn-modal-cta {
 
-  span {
-    color:#ddd;
-    font-size:11px; 
-    display:block; 
-  }
+.btn-modal-cta {
+	span {
+		color: #ddd;
+		font-size: 11px;
+		display: block;
+	}
 }
 
+
 /* Form validation */
+
 .form-group .help-block {
-  display: none;
+	display: none;
 }
 
 .form-group.has-error .help-block {
-  display: block;
+	display: block;
 }
 
+
 /* Dashboard */
+
 a[ng-click] {
-  cursor: pointer;
+	cursor: pointer;
 }

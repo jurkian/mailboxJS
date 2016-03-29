@@ -1,152 +1,152 @@
 {
-  "email": "example@user.com",
-  "inbox": [
-    {
-      "id": 1,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi?",
-      "from": "merry@merrysite.com",
-      "date": "23.03.2016",
-      "status": "",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam nobis sunt dicta ipsum nulla voluptatibus iusto repellat. Dolore, amet, harum!"
-    }, {
-      "id": 2,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-      "from": "john@example.com",
-      "date": "23.03.2016",
-      "status": "active",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque nobis minus, saepe modi pariatur perspiciatis unde non explicabo dolorem quos!"
-    }, {
-      "id": 3,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo!",
-      "from": "merry@merrysite.com",
-      "date": "23.03.2016",
-      "status": "",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque est, nam laudantium iste suscipit enim cupiditate adipisci perferendis eius minus."
-    }, {
-      "id": 4,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
-      "from": "merry@merrysite.com",
-      "date": "23.03.2016",
-      "status": "warning",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quidem architecto tempora eveniet hic, ratione quibusdam vel, unde quas praesentium."
-    }, {
-      "id": 5,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-      "from": "john@example.com",
-      "date": "23.03.2016",
-      "status": "",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nihil consectetur quo ipsum quasi in, totam sequi necessitatibus ea provident."
-    }, {
-      "id": 6,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias.",
-      "from": "merry@merrysite.com",
-      "date": "23.03.2016",
-      "status": "",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut architecto, repellendus ea tenetur sapiente aliquid repellat esse dolore ad?"
-    }, {
-      "id": 7,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-      "from": "john@example.com",
-      "date": "23.03.2016",
-      "status": "success",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique esse fuga eum, velit a expedita quae consequuntur distinctio quibusdam praesentium."
-    }, {
-      "id": 8,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-      "from": "john@example.com",
-      "date": "23.03.2016",
-      "status": "",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus iusto minima quod voluptate ipsam quia nostrum perferendis neque facere voluptatum!"
-    }, {
-      "id": 9,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-      "from": "john@example.com",
-      "date": "23.03.2016",
-      "status": "",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis doloribus, laudantium velit facere. Iste blanditiis, quis ab molestias? Nesciunt, magni?"
-    }, {
-      "id": 10,
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-      "from": "john@example.com",
-      "date": "23.03.2016",
-      "status": "",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis nam at numquam, modi, neque eligendi. Quam ea cupiditate, doloremque eaque."
-    }
-  ],
-  "sent": [
-    {
-      "id": 1,
-      "title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Sequi?",
-      "from": "merry@merrysite.com",
-      "date": "23.03.2016",
-      "status": "",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est nesciunt sapiente distinctio aliquam, necessitatibus deserunt tempora earum! Nulla, fugiat, id."
-    }, {
-      "id": 2,
-      "title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-      "from": "john@example.com",
-      "date": "23.03.2016",
-      "status": "active",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque expedita unde dicta culpa ipsum delectus obcaecati eius nobis adipisci! Officia!"
-    }, {
-      "id": 3,
-      "title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Explicabo!",
-      "from": "merry@merrysite.com",
-      "date": "23.03.2016",
-      "status": "",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni officiis, hic neque dolores rem fugiat praesentium at ut. Explicabo, amet."
-    }, {
-      "id": 4,
-      "title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
-      "from": "merry@merrysite.com",
-      "date": "23.03.2016",
-      "status": "warning",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, ad id labore amet voluptate placeat ratione sunt totam. Laborum, est."
-    }, {
-      "id": 5,
-      "title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
-      "from": "merry@merrysite.com",
-      "date": "23.03.2016",
-      "status": "",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque debitis accusantium voluptas, laboriosam quae veritatis aut, ipsam maxime voluptatum alias."
-    }, {
-      "id": 6,
-      "title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
-      "from": "merry@merrysite.com",
-      "date": "23.03.2016",
-      "status": "warning",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos ab omnis accusantium numquam praesentium nobis laudantium, dolorum maiores nesciunt voluptatibus!"
-    }
-  ],
-  "trash": [
-    {
-      "id": 1,
-      "title": "Trash ipsum dolor sit amet, consectetur adipisicing elit. Sequi?",
-      "from": "merry@merrysite.com",
-      "date": "23.03.2016",
-      "status": "",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, debitis delectus maiores rem quasi consequuntur quos tempora labore nesciunt dolores!"
-    }, {
-      "id": 2,
-      "title": "Trash ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
-      "from": "john@example.com",
-      "date": "23.03.2016",
-      "status": "active",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi itaque nihil nulla mollitia fugit accusantium, voluptate! Illum, ut sapiente veniam."
-    }, {
-      "id": 3,
-      "title": "Trash ipsum dolor sit amet, consectetur adipisicing elit. Explicabo!",
-      "from": "merry@merrysite.com",
-      "date": "23.03.2016",
-      "status": "",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque eius earum possimus, est nemo doloribus temporibus voluptate impedit recusandae modi."
-    }, {
-      "id": 4,
-      "title": "Trash ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
-      "from": "merry@merrysite.com",
-      "date": "23.03.2016",
-      "status": "warning",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium veritatis mollitia adipisci ducimus nesciunt quo est voluptatem possimus incidunt inventore!"
-    }
-  ]
+	"email": "example@user.com",
+	"inbox": [
+		{
+			"id": 1,
+			"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi?",
+			"from": "merry@merrysite.com",
+			"date": "23.03.2016",
+			"status": "",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam nobis sunt dicta ipsum nulla voluptatibus iusto repellat. Dolore, amet, harum!"
+		}, {
+			"id": 2,
+			"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+			"from": "john@example.com",
+			"date": "23.03.2016",
+			"status": "active",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque nobis minus, saepe modi pariatur perspiciatis unde non explicabo dolorem quos!"
+		}, {
+			"id": 3,
+			"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo!",
+			"from": "merry@merrysite.com",
+			"date": "23.03.2016",
+			"status": "",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque est, nam laudantium iste suscipit enim cupiditate adipisci perferendis eius minus."
+		}, {
+			"id": 4,
+			"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
+			"from": "merry@merrysite.com",
+			"date": "23.03.2016",
+			"status": "warning",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quidem architecto tempora eveniet hic, ratione quibusdam vel, unde quas praesentium."
+		}, {
+			"id": 5,
+			"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+			"from": "john@example.com",
+			"date": "23.03.2016",
+			"status": "",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nihil consectetur quo ipsum quasi in, totam sequi necessitatibus ea provident."
+		}, {
+			"id": 6,
+			"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias.",
+			"from": "merry@merrysite.com",
+			"date": "23.03.2016",
+			"status": "",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aut architecto, repellendus ea tenetur sapiente aliquid repellat esse dolore ad?"
+		}, {
+			"id": 7,
+			"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+			"from": "john@example.com",
+			"date": "23.03.2016",
+			"status": "success",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique esse fuga eum, velit a expedita quae consequuntur distinctio quibusdam praesentium."
+		}, {
+			"id": 8,
+			"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+			"from": "john@example.com",
+			"date": "23.03.2016",
+			"status": "",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus iusto minima quod voluptate ipsam quia nostrum perferendis neque facere voluptatum!"
+		}, {
+			"id": 9,
+			"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+			"from": "john@example.com",
+			"date": "23.03.2016",
+			"status": "",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis doloribus, laudantium velit facere. Iste blanditiis, quis ab molestias? Nesciunt, magni?"
+		}, {
+			"id": 10,
+			"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+			"from": "john@example.com",
+			"date": "23.03.2016",
+			"status": "",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis nam at numquam, modi, neque eligendi. Quam ea cupiditate, doloremque eaque."
+		}
+	],
+	"sent": [
+		{
+			"id": 1,
+			"title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Sequi?",
+			"from": "merry@merrysite.com",
+			"date": "23.03.2016",
+			"status": "",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est nesciunt sapiente distinctio aliquam, necessitatibus deserunt tempora earum! Nulla, fugiat, id."
+		}, {
+			"id": 2,
+			"title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+			"from": "john@example.com",
+			"date": "23.03.2016",
+			"status": "active",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque expedita unde dicta culpa ipsum delectus obcaecati eius nobis adipisci! Officia!"
+		}, {
+			"id": 3,
+			"title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Explicabo!",
+			"from": "merry@merrysite.com",
+			"date": "23.03.2016",
+			"status": "",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni officiis, hic neque dolores rem fugiat praesentium at ut. Explicabo, amet."
+		}, {
+			"id": 4,
+			"title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
+			"from": "merry@merrysite.com",
+			"date": "23.03.2016",
+			"status": "warning",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, ad id labore amet voluptate placeat ratione sunt totam. Laborum, est."
+		}, {
+			"id": 5,
+			"title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
+			"from": "merry@merrysite.com",
+			"date": "23.03.2016",
+			"status": "",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque debitis accusantium voluptas, laboriosam quae veritatis aut, ipsam maxime voluptatum alias."
+		}, {
+			"id": 6,
+			"title": "Sent ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
+			"from": "merry@merrysite.com",
+			"date": "23.03.2016",
+			"status": "warning",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos ab omnis accusantium numquam praesentium nobis laudantium, dolorum maiores nesciunt voluptatibus!"
+		}
+	],
+	"trash": [
+		{
+			"id": 1,
+			"title": "Trash ipsum dolor sit amet, consectetur adipisicing elit. Sequi?",
+			"from": "merry@merrysite.com",
+			"date": "23.03.2016",
+			"status": "",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, debitis delectus maiores rem quasi consequuntur quos tempora labore nesciunt dolores!"
+		}, {
+			"id": 2,
+			"title": "Trash ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo",
+			"from": "john@example.com",
+			"date": "23.03.2016",
+			"status": "active",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi itaque nihil nulla mollitia fugit accusantium, voluptate! Illum, ut sapiente veniam."
+		}, {
+			"id": 3,
+			"title": "Trash ipsum dolor sit amet, consectetur adipisicing elit. Explicabo!",
+			"from": "merry@merrysite.com",
+			"date": "23.03.2016",
+			"status": "",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque eius earum possimus, est nemo doloribus temporibus voluptate impedit recusandae modi."
+		}, {
+			"id": 4,
+			"title": "Trash ipsum dolor sit amet, consectetur adipisicing elit. Rerum?",
+			"from": "merry@merrysite.com",
+			"date": "23.03.2016",
+			"status": "warning",
+			"message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium veritatis mollitia adipisci ducimus nesciunt quo est voluptatem possimus incidunt inventore!"
+		}
+	]
 }

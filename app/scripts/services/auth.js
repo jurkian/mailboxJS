@@ -1,102 +1,102 @@
 'use strict';
 
 angular.module('mailboxApp')
-.factory('Auth', ['$http', function ($http) {
+	.factory('Auth', ['$http', function($http) {
 
-  var _login = function(_email, _password, callback) {
-  	var isLoggedIn = false;
+		var _login = function(_email, _password, callback) {
+			var isLoggedIn = false;
 
-  	// API validation here...
-  	
-  	// Instead, get user's data from local JSON file
-  	$http.get('models/user.json')
-  	.then(function(res) {
-  		
-  		if (_email === res.data.email && _password === res.data.password) {
-  			// User can be logged in
-  			isLoggedIn = true;
+			// API validation here...
 
-  		} else {
-  			// User's data don't match
-  			isLoggedIn = false;
+			// Instead, get user's data from local JSON file
+			$http.get('models/user.json')
+				.then(function(res) {
 
-  		}
+					if (_email === res.data.email && _password === res.data.password) {
+						// User can be logged in
+						isLoggedIn = true;
 
-  		callback(isLoggedIn);
+					} else {
+						// User's data don't match
+						isLoggedIn = false;
 
-  	}, function() {
-  		// Problems with getting user's data
-  		callback(false);
-  	});
-  };
+					}
 
-  var _register = function(_name, _email, _password, callback) {
-  	// API validation here...
+					callback(isLoggedIn);
 
-  	$http.get('models/user.json')
-  	.then(function(res) {
-  		// Register new user
-  		// ...
+				}, function() {
+					// Problems with getting user's data
+					callback(false);
+				});
+		};
 
-  		callback(true);
+		var _register = function(_name, _email, _password, callback) {
+			// API validation here...
 
-  	}, function() {
-  		// Problems with registering user
-  		callback(false);
-  	});
-  };
+			$http.get('models/user.json')
+				.then(function(res) {
+					// Register new user
+					// ...
 
-  // Get user's data
-  var _getUser = function(email, password, callback) {
-    $http.get('models/user.json')
-    .then(function(res) {
+					callback(true);
 
-      if (res.data.email === email && res.data.password === password) {
-        callback(res.data);
-      } else {
-        callback(false);
-      }
+				}, function() {
+					// Problems with registering user
+					callback(false);
+				});
+		};
 
-    }, function() {
+		// Get user's data
+		var _getUser = function(email, password, callback) {
+			$http.get('models/user.json')
+				.then(function(res) {
 
-      // Problems with getting user
-      callback(false);
+					if (res.data.email === email && res.data.password === password) {
+						callback(res.data);
+					} else {
+						callback(false);
+					}
 
-    });
-  };
+				}, function() {
 
-  // Get inbox for a particular email
-  var _getMailbox = function(email, callback) {
-    $http.get('models/user-mailbox.json')
-    .then(function(res) {
+					// Problems with getting user
+					callback(false);
 
-      if (res.data.email === email) {
-        callback(res.data);
-      } else {
-        callback(false);
-      }
+				});
+		};
 
-    }, function() {
+		// Get inbox for a particular email
+		var _getMailbox = function(email, callback) {
+			$http.get('models/user-mailbox.json')
+				.then(function(res) {
 
-      // Problems with getting user inbox
-      callback(false);
+					if (res.data.email === email) {
+						callback(res.data);
+					} else {
+						callback(false);
+					}
 
-    });
-  };
+				}, function() {
 
-  // Send email
-  var _sendEmail = function(to, subject, message, callback) {
-    // Send email
-    // and put it to "sent" list ...
-    
-    callback(true);
-  };
+					// Problems with getting user inbox
+					callback(false);
 
-  return {
-  	login: _login,
-  	register: _register,
-    getUser: _getUser,
-    getMailbox: _getMailbox,
-    sendEmail: _sendEmail
-  };
-}]);
+				});
+		};
+
+		// Send email
+		var _sendEmail = function(to, subject, message, callback) {
+			// Send email
+			// and put it to "sent" list ...
+
+			callback(true);
+		};
+
+		return {
+			login: _login,
+			register: _register,
+			getUser: _getUser,
+			getMailbox: _getMailbox,
+			sendEmail: _sendEmail
+		};
+	}]);

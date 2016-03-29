@@ -15,7 +15,7 @@ app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout
 
 	// Get user's data and emails
 	var email = 'example@user.com',
-			password = 'example';
+		password = 'example';
 
 	vm.user = {};
 	vm.mailbox = '';
@@ -38,7 +38,7 @@ app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout
 	// Auth failed: show Alert and redirect to main page
 	var authFailed = function() {
 		Alert.add('danger', 'Authorization failed');
-		
+
 		$timeout(function() {
 			$location.path('/');
 		}, 1000);
@@ -46,7 +46,7 @@ app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout
 
 	// The moment when the user is authorized
 	var authSuccess = function() {
-		
+
 		var isSingleEmailView = new RegExp(/dashboard\/[a-z]+\/[0-9]+$/);
 
 		// Get current path for view switch
@@ -61,7 +61,7 @@ app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout
 			var dashboardView = $routeParams.dbTab; // /dashboard/tab/id
 
 			// (-1 because email IDs in address start from 1)
-			var thisEmail = vm.mailbox[dashboardView][emailId-1];
+			var thisEmail = vm.mailbox[dashboardView][emailId - 1];
 
 			vm.emailFrom = thisEmail.from;
 			vm.emailTitle = thisEmail.title;
@@ -84,14 +84,14 @@ app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout
 	};
 
 	// Create new email modal
-  vm.openNewEmailModal = function() {
-    var modalInstance = $uibModal.open({
-      animation: true,
-      controller: 'NewEmailCtrl',
-      controllerAs: 'modal',
-      templateUrl: 'views/new-email-modal.html'
-    });
-  };
+	vm.openNewEmailModal = function() {
+		var modalInstance = $uibModal.open({
+			animation: true,
+			controller: 'NewEmailCtrl',
+			controllerAs: 'modal',
+			templateUrl: 'views/new-email-modal.html'
+		});
+	};
 
 }]);
 
@@ -99,27 +99,25 @@ app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout
 app.controller('NewEmailCtrl', ['$uibModalInstance', 'Auth', 'Alert', function($uibModalInstance, Auth, Alert) {
 	var vm = this;
 
-  vm.newEmail = {
-  	close: function() {
-  	  $uibModalInstance.close();
-  	},
-    send: function(form) {
-      if (form.$valid) {
-        Auth.sendEmail(this.to, this.subject, this.message, function(isSent) {
-          if (isSent === true) {
+	vm.newEmail = {
+		close: function() {
+			$uibModalInstance.close();
+		},
+		send: function(form) {
+			if (form.$valid) {
+				Auth.sendEmail(this.to, this.subject, this.message, function(isSent) {
 
-          	// Hide modal and show confirmation
-          	$uibModalInstance.close();
-            Alert.add('success', 'Email successfully sent');
-
-          } else {
-          	
-          	// Hide modal and show alert
-          	$uibModalInstance.close();
-          	Alert.add('danger', 'Problems sending your email');
-          }
-        });
-      }
-    }
-  };
+					if (isSent === true) {
+						// Hide modal and show confirmation
+						$uibModalInstance.close();
+						Alert.add('success', 'Email successfully sent');
+					} else {
+						// Hide modal and show alert
+						$uibModalInstance.close();
+						Alert.add('danger', 'Problems sending your email');
+					}
+				});
+			}
+		}
+	};
 }]);
