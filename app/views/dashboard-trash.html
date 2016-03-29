@@ -13,7 +13,7 @@
   <tbody>
     <tr class="{{ msg.status }}" ng-repeat="msg in db.mailbox.trash | filter: searchModel[name]">
       <td>{{ msg.id }}</td>
-      <td><a href="#/dashboard/trash/{{ msg.id }}">{{ msg.title }}</a></td>
+      <td><a href="#/dashboard/trash/{{ msg.id }}">{{ msg.title | truncate: 65 }}</a></td>
       <td>{{ msg.from }}</td>
       <td>{{ msg.date }}</td>
     </tr>
