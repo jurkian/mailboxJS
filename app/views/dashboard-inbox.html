@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="{{ msg.status }}" ng-repeat="msg in db.mailbox.inbox | filter: searchModel[name]">
+    <tr class="{{ msg.status }}" ng-repeat="msg in db.mailbox.inbox.slice(((db.currentPage-1)*db.itemsPerPage), ((db.currentPage)*db.itemsPerPage)) | filter: searchModel[name]">
       <td>{{ msg.id }}</td>
       <td><a href="#/dashboard/inbox/{{ msg.id }}">{{ msg.title | truncate: 65 }}</a></td>
       <td>{{ msg.from }}</td>
@@ -19,3 +19,5 @@
     </tr>
   </tbody>
 </table>
+
+<uib-pagination total-items="db.totalItems" max-size="db.maxSize" ng-model="db.currentPage" class="pagination-sm" boundary-link-numbers="true" rotate="false" items-per-page="db.itemsPerPage" ng-change="db.pageChanged()"></uib-pagination>

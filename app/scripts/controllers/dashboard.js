@@ -75,6 +75,12 @@ app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout
 		// Activate search box - in inbox by default
 		vm.searchModel = {};
 		vm.searchModel.name = 'findEmailInbox';
+
+		// Activate pagination
+		vm.totalItems = vm.mailbox.inbox.length;
+		vm.currentPage = 1;
+		vm.itemsPerPage = 5;
+		vm.maxSize = 5;
 	};
 
 	// Create new email modal
