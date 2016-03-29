@@ -1,6 +1,7 @@
 'use strict';
 
-app.factory('Alert', function () {
+angular.module('mailboxApp')
+.factory('Alert', function () {
 
 	// Show alert basing on type and message
 	var alert = {};

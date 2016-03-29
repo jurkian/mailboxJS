@@ -1,5 +1,7 @@
 'use strict';
 
+var app = angular.module('mailboxApp');
+
 app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout', 'Alert', 'Auth', '$uibModal', function($http, $routeParams, $location, $timeout, Alert, Auth, $uibModal) {
 
 	var vm = this; // vm stands for ViewModel

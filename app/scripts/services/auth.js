@@ -1,6 +1,7 @@
 'use strict';
 
-app.factory('Auth', ['$http', function ($http) {
+angular.module('mailboxApp')
+.factory('Auth', ['$http', function ($http) {
 
   var _login = function(_email, _password, callback) {
   	var isLoggedIn = false;

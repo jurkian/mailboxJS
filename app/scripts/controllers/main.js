@@ -1,5 +1,7 @@
 'use strict';
 
+var app = angular.module('mailboxApp');
+
 app.controller('MainCtrl', ['$uibModal', 'Alert', function($uibModal, Alert) {
 
   var vm = this; // vm stands for ViewModel

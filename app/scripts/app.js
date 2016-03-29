@@ -1,8 +1,7 @@
 'use strict';
 
-var app = angular.module('mailboxApp', ['ngRoute', 'ui.bootstrap']);
-
-app.config(function($routeProvider) {
+angular.module('mailboxApp', ['ngRoute', 'ui.bootstrap'])
+.config(function($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'views/main.html'
