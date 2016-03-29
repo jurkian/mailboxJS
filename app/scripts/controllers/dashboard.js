@@ -54,7 +54,7 @@ app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout
 		if (isSingleEmailView.test($location.path())) {
 
 			// Simplify the path for switch
-			vm.urlPath = '/dashboard/email';
+			vm.viewToLoad = 'singleEmail';
 
 			// Get category and email ID for single email view
 			var emailId = $routeParams.emailId;
@@ -69,14 +69,39 @@ app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout
 			vm.emailMessage = thisEmail.message;
 
 		} else {
-			vm.urlPath = $location.path();
+			// If target is one of the sidebar tabs - inbox, sent, trash
+			// Generate a dynamic view basing on path
+			vm.viewToLoad = 'sidebarTab';
+			vm.tabName = '';
+			vm.tabTitle = '';
+
+			switch ($location.path()) {
+				case '/dashboard':
+					vm.tabName = 'inbox';
+					vm.tabTitle = 'Inbox';
+					break;
+
+				case '/dashboard/sent':
+					vm.tabName = 'sent';
+					vm.tabTitle = 'Sent';
+					break;
+
+				case '/dashboard/trash':
+					vm.tabName = 'trash';
+					vm.tabTitle = 'Trash';
+					break;
+			}
+
+			vm.tabData = vm.mailbox[vm.tabName];
+
+			// Activate pagination
+			vm.totalItems = vm.tabData.length;
+			vm.currentPage = 1;
+			vm.itemsPerPage = 5;
+			vm.maxSize = 5;
 		}
 
-		// Activate pagination
-		vm.totalItems = vm.mailbox.inbox.length;
-		vm.currentPage = 1;
-		vm.itemsPerPage = 5;
-		vm.maxSize = 5;
+
 	};
 
 	// Create new email modal

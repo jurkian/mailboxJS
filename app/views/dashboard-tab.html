@@ -1,0 +1,22 @@
+<header>
+	<h5>{{ db.tabTitle }}</h5>
+</header>
+<table class="table table-striped table-hover ">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Title</th>
+			<th>From</th>
+			<th>Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="{{ msg.status }}" ng-repeat="msg in db.tabData.slice(((db.currentPage-1)*db.itemsPerPage), ((db.currentPage)*db.itemsPerPage)) | filter: searchbox">
+			<td>{{ msg.id }}</td>
+			<td><a href="#/dashboard/{{ db.tabName }}/{{ msg.id }}">{{ msg.title | truncate: 65 }}</a></td>
+			<td>{{ msg.from }}</td>
+			<td>{{ msg.date }}</td>
+		</tr>
+	</tbody>
+</table>
+<uib-pagination total-items="db.totalItems" max-size="db.maxSize" ng-model="db.currentPage" class="pagination-sm" boundary-link-numbers="true" rotate="false" items-per-page="db.itemsPerPage"></uib-pagination>

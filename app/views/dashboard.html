@@ -41,21 +41,15 @@
 					</div>
 				</div>
 				<!-- Load views basing on location path -->
-				<div class="col-md-9 dashboard-messages" ng-switch="db.urlPath">
-					<div ng-switch-when="/dashboard">
-						<ng-include src="'views/dashboard-inbox.html'"></ng-include>
-					</div>
-					<div ng-switch-when="/dashboard/sent">
-						<ng-include src="'views/dashboard-sent.html'"></ng-include>
-					</div>
-					<div ng-switch-when="/dashboard/trash">
-						<ng-include src="'views/dashboard-trash.html'"></ng-include>
-					</div>
-					<div ng-switch-when="/dashboard/email">
+				<div class="col-md-9 dashboard-messages" ng-switch="db.viewToLoad">
+					<div ng-switch-when="singleEmail">
 						<ng-include src="'views/dashboard-single.html'"></ng-include>
 					</div>
-					<div ng-switch-default="/dashboard">
-						<ng-include src="'views/dashboard-inbox.html'"></ng-include>
+					<div ng-switch-when="sidebarTab">
+						<ng-include src="'views/dashboard-tab.html'"></ng-include>
+					</div>
+					<div ng-switch-default="sidebarTab">
+						<ng-include src="'views/dashboard-tab.html'"></ng-include>
 					</div>
 				</div>
 			</div>
