@@ -11,7 +11,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr class="{{ msg.status }}" ng-repeat="msg in db.mailbox.inbox.slice(((db.currentPage-1)*db.itemsPerPage), ((db.currentPage)*db.itemsPerPage)) | filter: searchModel[name]">
+		<tr class="{{ msg.status }}" ng-repeat="msg in db.mailbox.inbox.slice(((db.currentPage-1)*db.itemsPerPage), ((db.currentPage)*db.itemsPerPage)) | filter: searchbox">
 			<td>{{ msg.id }}</td>
 			<td><a href="#/dashboard/inbox/{{ msg.id }}">{{ msg.title | truncate: 65 }}</a></td>
 			<td>{{ msg.from }}</td>

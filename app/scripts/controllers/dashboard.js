@@ -72,10 +72,6 @@ app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout
 			vm.urlPath = $location.path();
 		}
 
-		// Activate search box - in inbox by default
-		vm.searchModel = {};
-		vm.searchModel.name = 'findEmailInbox';
-
 		// Activate pagination
 		vm.totalItems = vm.mailbox.inbox.length;
 		vm.currentPage = 1;
