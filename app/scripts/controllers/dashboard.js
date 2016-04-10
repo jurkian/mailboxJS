@@ -2,7 +2,7 @@
 
 var app = angular.module('mailboxApp');
 
-app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout', 'Alert', 'Auth', '$uibModal', function($http, $routeParams, $location, $timeout, Alert, Auth, $uibModal) {
+app.controller('DashboardCtrl', function($http, $routeParams, $location, $timeout, Alert, Auth, $uibModal) {
 
 	var vm = this; // vm stands for ViewModel
 
@@ -114,10 +114,10 @@ app.controller('DashboardCtrl', ['$http', '$routeParams', '$location', '$timeout
 		});
 	};
 
-}]);
+});
 
 // New email controller
-app.controller('NewEmailCtrl', ['$uibModalInstance', 'Auth', 'Alert', function($uibModalInstance, Auth, Alert) {
+app.controller('NewEmailCtrl', function($uibModalInstance, Auth, Alert) {
 	var vm = this;
 
 	vm.newEmail = {
@@ -141,4 +141,4 @@ app.controller('NewEmailCtrl', ['$uibModalInstance', 'Auth', 'Alert', function($
 			}
 		}
 	};
-}]);
+});

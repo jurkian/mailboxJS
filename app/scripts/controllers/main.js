@@ -2,7 +2,7 @@
 
 var app = angular.module('mailboxApp');
 
-app.controller('MainCtrl', ['$uibModal', 'Alert', function($uibModal, Alert) {
+app.controller('MainCtrl', function($uibModal, Alert) {
 
 	var vm = this; // vm stands for ViewModel
 
@@ -33,13 +33,13 @@ app.controller('MainCtrl', ['$uibModal', 'Alert', function($uibModal, Alert) {
 		});
 	};
 
-}]);
+});
 
 // Modal instance controllers
 // Available when the modal is opened
 
 // Login modal
-app.controller('LoginModalCtrl', ['$uibModalInstance', 'Auth', 'Alert', '$location', '$timeout', function($uibModalInstance, Auth, Alert, $location, $timeout) {
+app.controller('LoginModalCtrl', function($uibModalInstance, Auth, Alert, $location, $timeout) {
 	var vm = this;
 
 	vm.login = {
@@ -68,10 +68,10 @@ app.controller('LoginModalCtrl', ['$uibModalInstance', 'Auth', 'Alert', '$locati
 			}
 		}
 	};
-}]);
+});
 
 // Register modal
-app.controller('RegisterModalCtrl', ['$uibModalInstance', 'Auth', 'Alert', function($uibModalInstance, Auth, Alert) {
+app.controller('RegisterModalCtrl', function($uibModalInstance, Auth, Alert) {
 	var vm = this;
 
 	vm.register = {
@@ -90,4 +90,4 @@ app.controller('RegisterModalCtrl', ['$uibModalInstance', 'Auth', 'Alert', funct
 			}
 		}
 	};
-}]);
+});
