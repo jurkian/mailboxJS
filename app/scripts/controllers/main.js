@@ -56,7 +56,7 @@ app.controller('LoginModalCtrl', function($uibModalInstance, Auth, Alert, $locat
 						Alert.clear();
 						$timeout(function() {
 							$location.path('/dashboard');
-						}, 700);
+						}, 400);
 
 					} else {
 

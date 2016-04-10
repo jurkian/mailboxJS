@@ -59,3 +59,75 @@ $icon-font-path: "../scripts/vendor/bootstrap-sass-official/assets/fonts/bootstr
 a[ng-click] {
 	cursor: pointer;
 }
+
+/* Animations */
+
+@keyframes opacity-animation {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Intro */
+
+#intro h1 {
+	opacity: 0;
+	animation: opacity-animation .5s linear .3s forwards;
+}
+
+.intro-buttons {
+	a {
+		opacity: 0;
+	}
+
+	a:nth-child(1) {
+		animation: opacity-animation .5s linear .5s forwards;
+	}
+
+	a:nth-child(2) {
+		animation: opacity-animation .5s linear .7s forwards;
+	}
+}
+
+/* Changing views */
+.animate-view {
+	&.ng-enter,
+	&.ng-leave {
+		transition: all .3s ease;
+	}
+
+	&.ng-leave.ng-leave-active,
+	&.ng-enter {
+		opacity: 0.2;
+	}
+
+	&.ng-enter.ng-enter-active,
+	&.ng-leave {
+		opacity: 1;
+	}
+}
+
+/* Repeats */
+.animate-repeat {
+	&.ng-enter,
+	&.ng-move,
+	&.ng-leave {
+		transition: all .2s ease;
+	}
+
+	&.ng-enter,
+	&.ng-move,
+	&.ng-leave.ng-leave-active {
+		opacity: 0;
+	}
+
+	&.ng-enter.ng-enter-active,
+	&.ng-move.ng-move-active,
+	&.ng-leave {
+		opacity: 1;
+	}
+}
