@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mailboxApp', ['ngRoute', 'ui.bootstrap'])
+angular.module('mailboxApp', ['ngRoute', 'ngMessages', 'ui.bootstrap'])
 	.config(function($routeProvider) {
 		$routeProvider
 			.when('/', {

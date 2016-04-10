@@ -4,30 +4,36 @@
 		<h4 class="modal-title">New account</h4>
 	</div>
 	<div class="modal-body">
-		<div class="form-group" ng-class="{ 'has-error': registerForm.registerName.$invalid && registerForm.registerName.$dirty }">
+		<div class="form-group" ng-class="{ 'has-error': registerForm.registerName.$invalid && registerForm.registerName.$touched }">
 			<label for="register-name" class="col-sm-3 control-label">Name</label>
 			<div class="col-sm-8">
 				<input name="registerName" id="register-name" class="form-control" placeholder="Enter your name" type="text" ng-model="modal.register.name" ng-minlength="2" ng-maxlength="20" required>
-				<p ng-show="registerForm.registerName.$error.minlength" class="help-block">Your name is too short (min: 2)</p>
-				<p ng-show="registerForm.registerName.$error.maxlength" class="help-block">Your name is too long (max: 20)</p>
-				<p ng-show="registerForm.registerName.$error.required" class="help-block">Please enter your name</p>
+				<div ng-messages="registerForm.registerName.$error" ng-show="registerForm.registerName.$touched">
+				  <p ng-message="minlength" class="help-block">Your name is too short (min: 2)</p>
+				  <p ng-message="maxlength" class="help-block">Your name is too long (max: 20)</p>
+				  <p ng-message="required" class="help-block">Please enter your name</p>
+				</div>
 			</div>
 		</div>
-		<div class="form-group" ng-class="{ 'has-error': registerForm.registerEmail.$invalid && registerForm.registerEmail.$dirty }">
+		<div class="form-group" ng-class="{ 'has-error': registerForm.registerEmail.$invalid && registerForm.registerEmail.$touched }">
 			<label for="register-email" class="col-sm-3 control-label">Email</label>
 			<div class="col-sm-8">
 				<input name="registerEmail" id="register-email" class="form-control" placeholder="Enter your email" type="email" ng-model="modal.register.email" ng-minlength="6" required>
-				<p ng-show="registerForm.registerEmail.$error.minlength" class="help-block">Your email is too short (min: 6)</p>
-				<p ng-show="registerForm.registerEmail.$error.email" class="help-block">Please enter correct email</p>
-				<p ng-show="registerForm.registerEmail.$error.required" class="help-block">Please enter your email</p>
+				<div ng-messages="registerForm.registerEmail.$error" ng-show="registerForm.registerEmail.$touched">
+				  <p ng-message="minlength" class="help-block">Your email is too short (min: 6)</p>
+				  <p ng-message="email" class="help-block">Please enter correct email</p>
+				  <p ng-message="required" class="help-block">Please enter your email</p>
+				</div>
 			</div>
 		</div>
-		<div class="form-group" ng-class="{ 'has-error': registerForm.registerPassword.$invalid && registerForm.registerPassword.$dirty }">
+		<div class="form-group" ng-class="{ 'has-error': registerForm.registerPassword.$invalid && registerForm.registerPassword.$touched }">
 			<label class="col-sm-3 control-label" for="register-password">Password</label>
 			<div class="col-sm-8">
 				<input name="registerPassword" id="register-password" class="form-control" placeholder="Make sure it has at least 6 characters" type="password" ng-model="modal.register.password" ng-minlength="6" required>
-				<p ng-show="registerForm.registerPassword.$error.minlength" class="help-block">Your password is too short (min: 6)</p>
-				<p ng-show="registerForm.registerPassword.$error.required" class="help-block">Please enter your password</p>
+				<div ng-messages="registerForm.registerPassword.$error" ng-show="registerForm.registerPassword.$touched">
+				  <p ng-message="minlength" class="help-block">Your password is too short (min: 6)</p>
+				  <p ng-message="required" class="help-block">Please enter your password</p>
+				</div>
 			</div>
 		</div>
 		<div class="form-group">
