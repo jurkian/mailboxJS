@@ -1,14 +1,13 @@
 # mailboxJS
-Simple email service
+Simple email service written in AngularJS
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+## Getting started
 
-## First install all dependencies
+1. Install [Node JS](http://nodejs.org/)
+2. Install [Grunt](http://gruntjs.com/getting-started) with `npm install -g grunt-cli` and [Bower](http://bower.io/) with `npm install -g bower`
+3. You also need [Ruby](http://rubyinstaller.org/) to compile Sass, then run `gem install compass`
+4. Install dependencies with `npm install` and `bower install`
 
-You need to have npm and Ruby installed
-Then run `npm install && bower install && gem install compass` to get all the dependencies
+Run `grunt serve` to start server and begin developing
 
-## Build & development
-
-Run `grunt` for building and `grunt serve` for preview.
+Run `grunt build` to create a build
