@@ -1,14 +1,21 @@
-angular.module('app.home')
-	.controller('RegisterModalCtrl', RegisterModalCtrl);
+(function() {
+	angular.module('app.home')
+		.controller('RegisterModalCtrl', RegisterModalCtrl);
 
-function RegisterModalCtrl($uibModalInstance, Auth, Alert) {
-	var vm = this;
+	function RegisterModalCtrl($uibModalInstance, Auth, Alert) {
+		var vm = this;
 
-	vm.register = {
-		close: function() {
+		vm.register = {};
+		vm.register.close = close;
+		vm.register.submit = submit;
+
+		////////////
+
+		function close() {
 			$uibModalInstance.close();
-		},
-		submit: function(form) {
+		}
+
+		function submit(form) {
 			if (form.$valid) {
 				Auth.register(this.name, this.email, this.password, function(isRegistered) {
 					if (isRegistered === true) {
@@ -19,5 +26,5 @@ function RegisterModalCtrl($uibModalInstance, Auth, Alert) {
 				});
 			}
 		}
-	};
-}
+	}
+})();

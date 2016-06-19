@@ -1,101 +1,106 @@
-angular.module('app')
-	.factory('Auth', Auth);
+(function() {
+	angular.module('app')
+		.factory('Auth', Auth);
 
-function Auth($http) {
-	var _login = function(_email, _password, callback) {
-		var isLoggedIn = false;
+	function Auth($http) {
+		var alert = {};
 
-		// API validation here...
+		var factory = {
+			login: login,
+			register: register,
+			getUser: getUser,
+			getMailbox: getMailbox,
+			sendEmail: sendEmail
+		};
 
-		// Instead, get user's data from local JSON file
-		$http.get('api/user.json')
-		.then(function(res) {
+		return factory;
 
-			if (_email === res.data.email && _password === res.data.password) {
-				// User can be logged in
-				isLoggedIn = true;
+		////////////
 
-			} else {
-				// User's data don't match
-				isLoggedIn = false;
+		function login(email, password, callback) {
+			var isLoggedIn = false;
 
-			}
+			// API validation here...
 
-			callback(isLoggedIn);
+			// Instead, get user's data from local JSON file
+			$http.get('api/user.json')
+			.then(function(res) {
 
-		}, function() {
-			// Problems with getting user's data
-			callback(false);
-		});
-	};
+				if (email === res.data.email && password === res.data.password) {
+					// User can be logged in
+					isLoggedIn = true;
 
-	var _register = function(_name, _email, _password, callback) {
-		// API validation here...
+				} else {
+					// User's data don't match
+					isLoggedIn = false;
+				}
 
-		$http.get('api/user.json')
-		.then(function(res) {
-			// Register new user
-			// ...
+				callback(isLoggedIn);
+
+			}, function() {
+				// Problems with getting user's data
+				callback(false);
+			});
+		}
+
+		function register(name, email, password, callback) {
+			// API validation here...
+
+			$http.get('api/user.json')
+			.then(function(res) {
+				// Register new user ...
+
+				callback(true);
+
+			}, function() {
+				// Problems with registering user
+				callback(false);
+			});
+		}
+
+		// Get user's data
+		function getUser(email, password, callback) {
+			$http.get('api/user.json')
+			.then(function(res) {
+
+				if (res.data.email === email && res.data.password === password) {
+					callback(res.data);
+				} else {
+					callback(false);
+				}
+
+			}, function() {
+
+				// Problems with getting user
+				callback(false);
+
+			});
+		}
+
+		// Get inbox for a particular email
+		function getMailbox(email, callback) {
+			$http.get('api/user-mailbox.json')
+			.then(function(res) {
+
+				if (res.data.email === email) {
+					callback(res.data);
+				} else {
+					callback(false);
+				}
+
+			}, function() {
+
+				// Problems with getting user inbox
+				callback(false);
+
+			});
+		}
+
+		// Send email
+		function sendEmail(to, subject, message, callback) {
+			// Put it to "sent" list ...
 
 			callback(true);
-
-		}, function() {
-			// Problems with registering user
-			callback(false);
-		});
-	};
-
-	// Get user's data
-	var _getUser = function(email, password, callback) {
-		$http.get('api/user.json')
-		.then(function(res) {
-
-			if (res.data.email === email && res.data.password === password) {
-				callback(res.data);
-			} else {
-				callback(false);
-			}
-
-		}, function() {
-
-			// Problems with getting user
-			callback(false);
-
-		});
-	};
-
-	// Get inbox for a particular email
-	var _getMailbox = function(email, callback) {
-		$http.get('api/user-mailbox.json')
-		.then(function(res) {
-
-			if (res.data.email === email) {
-				callback(res.data);
-			} else {
-				callback(false);
-			}
-
-		}, function() {
-
-			// Problems with getting user inbox
-			callback(false);
-
-		});
-	};
-
-	// Send email
-	var _sendEmail = function(to, subject, message, callback) {
-		// Send email
-		// and put it to "sent" list ...
-
-		callback(true);
-	};
-
-	return {
-		login: _login,
-		register: _register,
-		getUser: _getUser,
-		getMailbox: _getMailbox,
-		sendEmail: _sendEmail
-	};
-}
+		}
+	}
+})();

@@ -1,5 +1,8 @@
-angular.module('app')
-	.filter('truncate', function() {
+(function() {
+	angular.module('app.dashboard')
+		.filter('truncate', truncate);
+
+	function truncate() {
 		return function(input, max, tail) {
 
 			if (!input) {
@@ -17,7 +20,7 @@ angular.module('app')
 			}
 
 			input = input.substr(0, max);
-
 			return input + (tail || '…');
 		};
-	});
+	}
+})();

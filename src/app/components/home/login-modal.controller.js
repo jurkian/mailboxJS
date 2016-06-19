@@ -1,14 +1,21 @@
-angular.module('app.home')
-	.controller('LoginModalCtrl', LoginModalCtrl);
+(function() {
+	angular.module('app.home')
+		.controller('LoginModalCtrl', LoginModalCtrl);
 
-function LoginModalCtrl($uibModalInstance, Auth, Alert, $location, $timeout) {
-	var vm = this;
+	function LoginModalCtrl($uibModalInstance, Auth, Alert, $location, $timeout) {
+		var vm = this;
 
-	vm.login = {
-		close: function() {
+		vm.login = {};
+		vm.login.close = close;
+		vm.login.submit = submit;
+
+		////////////
+
+		function close() {
 			$uibModalInstance.close();
-		},
-		submit: function(form) {
+		}
+
+		function submit(form) {
 			if (form.$valid) {
 				Auth.login(this.email, this.password, function(isLoggedIn) {
 					if (isLoggedIn === true) {
@@ -29,5 +36,5 @@ function LoginModalCtrl($uibModalInstance, Auth, Alert, $location, $timeout) {
 				});
 			}
 		}
-	};
-}
+	}
+})();

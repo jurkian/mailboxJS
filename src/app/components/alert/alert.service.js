@@ -1,27 +1,35 @@
-angular.module('app')
-	.factory('Alert', Alert);
+(function() {
+	angular.module('app')
+		.factory('Alert', Alert);
 
-function Alert() {
-	// Show alert basing on type and message
-	var alert = {};
+	function Alert() {
+		var alert = {};
 
-	var _clear = function() {
-		alert = {};
-	};
+		var factory = {
+			clear: clear,
+			add: add,
+			get: get
+		};
 
-	var _add = function(_type, _msg) {
-		_clear();
+		return factory;
 
-		// Add new element
-		alert.type = _type;
-		alert.msg = _msg;
-	};
+		////////////
 
-	return {
-		add: _add,
-		clear: _clear,
-		get: function() {
+		function clear() {
+			alert = {};
+		}
+
+		// Show alert basing on type and message
+		function add(type, msg) {
+			clear();
+
+			// Add new element
+			alert.type = type;
+			alert.msg = msg;
+		}
+
+		function get() {
 			return alert;
 		}
-	};
-}
+	}
+})();

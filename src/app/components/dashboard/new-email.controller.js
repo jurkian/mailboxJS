@@ -1,14 +1,21 @@
-angular.module('app.dashboard')
-	.controller('NewEmailCtrl', NewEmailCtrl);
+(function() {
+	angular.module('app.dashboard')
+		.controller('NewEmailCtrl', NewEmailCtrl);
 
-function NewEmailCtrl($uibModalInstance, Auth, Alert) {
-	var vm = this;
+	function NewEmailCtrl($uibModalInstance, Auth, Alert) {
+		var vm = this;
 
-	vm.newEmail = {
-		close: function() {
+		vm.newEmail = {};
+		vm.newEmail.close = close;
+		vm.newEmail.send = send;
+
+		////////////
+
+		function close() {
 			$uibModalInstance.close();
-		},
-		send: function(form) {
+		}
+
+		function send(form) {
 			if (form.$valid) {
 				Auth.sendEmail(this.to, this.subject, this.message, function(isSent) {
 
@@ -24,5 +31,5 @@ function NewEmailCtrl($uibModalInstance, Auth, Alert) {
 				});
 			}
 		}
-	};
-}
+	}
+})();
