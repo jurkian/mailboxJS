@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>mailboxJS</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+	<!-- build:css styles/vendor.css -->
+	<link rel="stylesheet" href="styles/bootstrap.css">
+	<!-- endbuild -->
+
+	<!-- build:css styles/main.css -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- endbuild -->
+</head>
+
+<body ng-app="app">
+	<div ng-view class="animate-view"></div>
+
+	<!-- Libs -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+	<!-- build:js scripts/vendor.min.js -->
+	<script src="/node_modules/angular-route/angular-route.min.js"></script>
+	<script src="/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+	<script src="/node_modules/angular-route/angular-route.min.js"></script>
+	<script src="/node_modules/angular-messages/angular-messages.min.js"></script>
+	<script src="/node_modules/angular-animate/angular-animate.min.js"></script>
+	<!-- endbuild -->
+
+	<!-- build:js scripts/scripts.min.js -->
+	<script src="app/app.module.js"></script>
+	<script src="app/app.config.js"></script>
+
+	<script src="app/components/home/home.js"></script>
+	<script src="app/components/home/truncate.filter.js"></script>
+	<script src="app/components/dashboard/dashboard.js"></script>
+	<script src="app/components/auth/auth.service.js"></script>
+	<script src="app/components/alert/alert.service.js"></script>
+	<!-- endbuild -->
+</body>
+
+</html>

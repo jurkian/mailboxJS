@@ -1,13 +1,10 @@
 # mailboxJS
-Simple email service written in AngularJS
+Simple email app created in AngularJS and Bootstrap UI
 
 ## Getting started
 
 1. Install [Node JS](http://nodejs.org/)
-2. Install [Grunt](http://gruntjs.com/getting-started) with `npm install -g grunt-cli` and [Bower](http://bower.io/) with `npm install -g bower`
-3. You also need [Ruby](http://rubyinstaller.org/) to compile Sass, then run `gem install compass`
-4. Install dependencies with `npm install` and `bower install`
-
-Run `grunt serve` to start server and begin developing
-
-Run `grunt build` to create a build
+2. Install [Gulp](http://gulpjs.com/) with `npm install -g gulp-cli`
+3. Install dependencies with `npm install`
+4. Run `gulp serve` to start server and begin developing
+5. Run `gulp build` to create a build
