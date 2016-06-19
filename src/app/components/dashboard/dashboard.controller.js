@@ -1,8 +1,8 @@
-var app = angular.module('app');
+angular.module('app.dashboard')
+	.controller('DashboardCtrl', DashboardCtrl);
 
-app.controller('DashboardCtrl', function($routeParams, $location, $timeout, Alert, Auth, $uibModal) {
-
-	var vm = this; // vm stands for ViewModel
+function DashboardCtrl($routeParams, $location, $timeout, Alert, Auth, $uibModal) {
+	var vm = this;
 
 	// Alerts
 	vm.alert = Alert;
@@ -111,32 +111,4 @@ app.controller('DashboardCtrl', function($routeParams, $location, $timeout, Aler
 			templateUrl: 'views/auth/new-email-modal.html'
 		});
 	};
-
-});
-
-// New email controller
-app.controller('NewEmailCtrl', function($uibModalInstance, Auth, Alert) {
-	var vm = this;
-
-	vm.newEmail = {
-		close: function() {
-			$uibModalInstance.close();
-		},
-		send: function(form) {
-			if (form.$valid) {
-				Auth.sendEmail(this.to, this.subject, this.message, function(isSent) {
-
-					if (isSent === true) {
-						// Hide modal and show confirmation
-						$uibModalInstance.close();
-						Alert.add('success', 'Email successfully sent');
-					} else {
-						// Hide modal and show alert
-						$uibModalInstance.close();
-						Alert.add('danger', 'Problems sending your email');
-					}
-				});
-			}
-		}
-	};
-});
+}
