@@ -1,129 +1,14 @@
-$icon-font-path: "../../../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
+@import 'components/variables';
+@import 'components/animations';
 
 /* MailboxJS */
 
-/* Intro section */
-
-#intro {
-	background: url('../images/background.jpg') no-repeat;
-	background-size: cover;
-	display: flex;
-	min-height: 100vh;
-	align-items: center;
-	align-content: center;
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }
 
-
-/* Alert */
-
-.intro-alert,
-.dashboard-alert {
-	text-align: center;
-	margin-bottom: 0;
-	z-index: 99;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-}
-
-
-/* Intro login/register form */
-
-.btn-modal-cta {
-	span {
-		color: #ddd;
-		font-size: 11px;
-		display: block;
-	}
-}
-
-
-/* Form validation */
-
-.form-group .help-block {
-	display: none;
-}
-
-.form-group.has-error .help-block {
-	display: block;
-}
-
-
-/* Dashboard */
-
-a[ng-click] {
-	cursor: pointer;
-}
-
-/* Animations */
-
-@keyframes opacity-animation {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-/* Intro */
-
-#intro h1 {
-	opacity: 0;
-	animation: opacity-animation .5s linear .3s forwards;
-}
-
-.intro-buttons {
-	a {
-		opacity: 0;
-	}
-
-	a:nth-child(1) {
-		animation: opacity-animation .5s linear .5s forwards;
-	}
-
-	a:nth-child(2) {
-		animation: opacity-animation .5s linear .7s forwards;
-	}
-}
-
-/* Changing views */
-.animate-view {
-	&.ng-enter,
-	&.ng-leave {
-		transition: all .3s ease;
-	}
-
-	&.ng-leave.ng-leave-active,
-	&.ng-enter {
-		opacity: 0.2;
-	}
-
-	&.ng-enter.ng-enter-active,
-	&.ng-leave {
-		opacity: 1;
-	}
-}
-
-/* Repeats */
-.animate-repeat {
-	&.ng-enter,
-	&.ng-move,
-	&.ng-leave {
-		transition: all .2s ease;
-	}
-
-	&.ng-enter,
-	&.ng-move,
-	&.ng-leave.ng-leave-active {
-		opacity: 0;
-	}
-
-	&.ng-enter.ng-enter-active,
-	&.ng-move.ng-move-active,
-	&.ng-leave {
-		opacity: 1;
-	}
-}
+@import 'components/home';
+@import 'components/dashboard';
+@import 'components/alerts';
+@import 'components/forms';
+@import 'components/views';

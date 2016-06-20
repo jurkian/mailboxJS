@@ -1,0 +1,40 @@
+/* Changing views */
+
+.animate-view {
+	&.ng-enter,
+	&.ng-leave {
+		transition: all .3s ease;
+	}
+
+	&.ng-leave.ng-leave-active,
+	&.ng-enter {
+		opacity: 0.2;
+	}
+
+	&.ng-enter.ng-enter-active,
+	&.ng-leave {
+		opacity: 1;
+	}
+}
+
+/* Repeats */
+
+.animate-repeat {
+	&.ng-enter,
+	&.ng-move,
+	&.ng-leave {
+		transition: all .2s ease;
+	}
+
+	&.ng-enter,
+	&.ng-move,
+	&.ng-leave.ng-leave-active {
+		opacity: 0;
+	}
+
+	&.ng-enter.ng-enter-active,
+	&.ng-move.ng-move-active,
+	&.ng-leave {
+		opacity: 1;
+	}
+}
